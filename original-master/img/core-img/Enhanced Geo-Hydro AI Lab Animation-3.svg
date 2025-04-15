@@ -1,0 +1,529 @@
+<svg width="100%" height="160" viewBox="0 0 1200 160" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <!-- 圓角矩形裁剪路徑 -->
+    <defs>
+      <clipPath id="roundedRect">
+        <rect x="0" y="0" width="1200" height="160" rx="20" ry="20" />
+      </clipPath>
+      
+      <!-- 更絢麗的背景漸變 -->
+      <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0F2027">
+          <animate attributeName="stop-color" values="#0F2027;#203A43;#2C5364;#0F2027" dur="8s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="50%" stop-color="#203A43">
+          <animate attributeName="stop-color" values="#203A43;#2C5364;#0F2027;#203A43" dur="8s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="100%" stop-color="#2C5364">
+          <animate attributeName="stop-color" values="#2C5364;#0F2027;#203A43;#2C5364" dur="8s" repeatCount="indefinite" />
+        </stop>
+      </linearGradient>
+      
+      <!-- 更豐富的海洋顏色 -->
+      <linearGradient id="oceanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#3498db">
+          <animate attributeName="stop-color" values="#3498db;#2980b9;#00a8ff;#3498db" dur="5s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="50%" stop-color="#2980b9">
+          <animate attributeName="stop-color" values="#2980b9;#48dbfb;#0abde3;#2980b9" dur="6s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="100%" stop-color="#48dbfb">
+          <animate attributeName="stop-color" values="#48dbfb;#0abde3;#00d2d3;#48dbfb" dur="5s" repeatCount="indefinite" />
+        </stop>
+      </linearGradient>
+    <!-- 增強的水紋效果 -->
+    <pattern id="oceanPattern" width="1200" height="160" patternUnits="userSpaceOnUse">
+        <path d="M0,50 Q150,20 300,50 T600,50 T900,50 T1200,50" fill="none" stroke="#48dbfb" stroke-width="2" opacity="0.5">
+          <animate attributeName="d" 
+                   values="M0,50 Q150,20 300,50 T600,50 T900,50 T1200,50;
+                           M0,50 Q150,80 300,50 T600,50 T900,50 T1200,50;
+                           M0,50 Q150,20 300,50 T600,50 T900,50 T1200,50" 
+                   dur="5s" 
+                   repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite" />
+        </path>
+        <path d="M0,70 Q150,40 300,70 T600,70 T900,70 T1200,70" fill="none" stroke="#0abde3" stroke-width="2.5" opacity="0.4">
+          <animate attributeName="d" 
+                   values="M0,70 Q150,40 300,70 T600,70 T900,70 T1200,70;
+                           M0,70 Q150,100 300,70 T600,70 T900,70 T1200,70;
+                           M0,70 Q150,40 300,70 T600,70 T900,70 T1200,70" 
+                   dur="6s" 
+                   repeatCount="indefinite" />
+          <animate attributeName="stroke-width" values="2.5;3.5;2.5" dur="4s" repeatCount="indefinite" />
+        </path>
+        <path d="M0,90 Q150,60 300,90 T600,90 T900,90 T1200,90" fill="none" stroke="#2980b9" stroke-width="3" opacity="0.3">
+          <animate attributeName="d" 
+                   values="M0,90 Q150,60 300,90 T600,90 T900,90 T1200,90;
+                           M0,90 Q150,120 300,90 T600,90 T900,90 T1200,90;
+                           M0,90 Q150,60 300,90 T600,90 T900,90 T1200,90" 
+                   dur="7s" 
+                   repeatCount="indefinite" />
+          <animate attributeName="stroke-width" values="3;4;3" dur="5s" repeatCount="indefinite" />
+        </path>
+        
+        <!-- 增加更多水滴 -->
+        <circle cx="225" cy="50" r="1.5" fill="#c7ecee">
+          <animate attributeName="cy" values="50;70;50" dur="8s" repeatCount="indefinite" />
+          <animate attributeName="r" values="1.5;3;1.5" dur="8s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.7;1;0.7" dur="8s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="375" cy="65" r="1.5" fill="#c7ecee">
+          <animate attributeName="cy" values="65;85;65" dur="7s" repeatCount="indefinite" />
+          <animate attributeName="r" values="1.5;2.5;1.5" dur="7s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.7;1;0.7" dur="7s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="525" cy="70" r="1.5" fill="#c7ecee">
+            <animate attributeName="cy" values="70;90;70" dur="6s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1.5;3;1.5" dur="6s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.7;1;0.7" dur="6s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="675" cy="55" r="1.5" fill="#c7ecee">
+            <animate attributeName="cy" values="55;75;55" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1.5;2.5;1.5" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.7;1;0.7" dur="9s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="825" cy="60" r="1.5" fill="#c7ecee">
+            <animate attributeName="cy" values="60;80;60" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1.5;3;1.5" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.7;1;0.7" dur="10s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="975" cy="75" r="1.5" fill="#c7ecee">
+            <animate attributeName="cy" values="75;95;75" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1.5;2.5;1.5" dur="8s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.7;1;0.7" dur="8s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="1125" cy="80" r="1.5" fill="#c7ecee">
+            <animate attributeName="cy" values="80;100;80" dur="7s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1.5;3;1.5" dur="7s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.7;1;0.7" dur="7s" repeatCount="indefinite" />
+          </circle>
+        </pattern>
+        
+        <!-- 增強的海洋流動效果 -->
+        <linearGradient id="oceanFlow" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#c7ecee" stop-opacity="0">
+            <animate attributeName="stop-opacity" values="0;0.2;0" dur="5s" repeatCount="indefinite" />
+          </stop>
+          <stop offset="50%" stop-color="#48dbfb" stop-opacity="0.2">
+            <animate attributeName="stop-opacity" values="0.2;0.4;0.2" dur="5s" repeatCount="indefinite" />
+          </stop>
+          <stop offset="100%" stop-color="#0abde3" stop-opacity="0.4">
+            <animate attributeName="stop-opacity" values="0.4;0.6;0.4" dur="5s" repeatCount="indefinite" />
+          </stop>
+        </linearGradient>
+    <!-- 增強的粒子效果 -->
+    <filter id="particle" x="-50%" y="-50%" width="200%" height="200%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise">
+          <animate attributeName="baseFrequency" values="0.05;0.07;0.05" dur="10s" repeatCount="indefinite" />
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+      
+      <!-- 更強的發光效果 -->
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="3" result="blur">
+          <animate attributeName="stdDeviation" values="3;4;3" dur="3s" repeatCount="indefinite" />
+        </feGaussianBlur>
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
+      
+      <!-- 更動態的文字流動效果 -->
+      <filter id="textFlow" x="-50%" y="-50%" width="200%" height="200%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="1" result="turbulence" seed="1">
+          <animate attributeName="baseFrequency" values="0.01;0.03;0.01" dur="6s" repeatCount="indefinite" />
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="2" xChannelSelector="R" yChannelSelector="G">
+          <animate attributeName="scale" values="2;3;2" dur="6s" repeatCount="indefinite" />
+        </feDisplacementMap>
+      </filter>
+    <!-- 更絢麗的英文文字漸變 -->
+    <linearGradient id="englishTextGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#00cec9">
+          <animate attributeName="stop-color" values="#00cec9;#81ecec;#00cec9" dur="1s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="50%" stop-color="#55efc4">
+          <animate attributeName="stop-color" values="#55efc4;#00cec9;#55efc4" dur="1s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="100%" stop-color="#81ecec">
+          <animate attributeName="stop-color" values="#81ecec;#55efc4;#81ecec" dur="1s" repeatCount="indefinite" />
+        </stop>
+      </linearGradient>
+      
+      <!-- 更絢麗的中文文字漸變 -->
+      <linearGradient id="chineseTextGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#a29bfe">
+          <animate attributeName="stop-color" values="#a29bfe;#dfe6e9;#a29bfe" dur="1s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="50%" stop-color="#dfe6e9">
+          <animate attributeName="stop-color" values="#dfe6e9;#ffeaa7;#dfe6e9" dur="1s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="100%" stop-color="#ffeaa7">
+          <animate attributeName="stop-color" values="#ffeaa7;#a29bfe;#ffeaa7" dur="1s" repeatCount="indefinite" />
+        </stop>
+      </linearGradient>
+      
+      <!-- 更豐富的土壤紋理 -->
+      <pattern id="soilPattern" width="100" height="100" patternUnits="userSpaceOnUse">
+        <rect width="100" height="100" fill="#6D4C41">
+          <animate attributeName="fill" values="#6D4C41;#5D4037;#6D4C41" dur="8s" repeatCount="indefinite" />
+        </rect>
+        <circle cx="10" cy="10" r="2" fill="#5D4037">
+          <animate attributeName="r" values="2;3;2" dur="6s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="30" cy="20" r="3" fill="#5D4037">
+          <animate attributeName="r" values="3;4;3" dur="7s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="50" cy="15" r="2" fill="#5D4037">
+            <animate attributeName="r" values="2;3;2" dur="5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="70" cy="25" r="3" fill="#5D4037">
+            <animate attributeName="r" values="3;4;3" dur="8s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="90" cy="10" r="2" fill="#5D4037">
+            <animate attributeName="r" values="2;3;2" dur="6s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="20" cy="40" r="3" fill="#5D4037">
+            <animate attributeName="r" values="3;4;3" dur="7s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="40" cy="35" r="2" fill="#5D4037">
+            <animate attributeName="r" values="2;3;2" dur="5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="60" cy="45" r="3" fill="#5D4037">
+            <animate attributeName="r" values="3;4;3" dur="8s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="80" cy="30" r="2" fill="#5D4037">
+            <animate attributeName="r" values="2;3;2" dur="6s" repeatCount="indefinite" />
+          </circle>
+        </pattern>
+        
+        <!-- 水流動畫 - 調整垂直位置 -->
+        <clipPath id="waterClip">
+          <path d="M0,110 Q300,100 600,110 T1200,110 L1200,160 L0,160 Z">
+            <animate attributeName="d" 
+                     values="M0,110 Q300,100 600,110 T1200,110 L1200,160 L0,160 Z;
+                             M0,110 Q300,120 600,105 T1200,110 L1200,160 L0,160 Z;
+                             M0,110 Q300,100 600,110 T1200,110 L1200,160 L0,160 Z" 
+                     dur="8s" 
+                     repeatCount="indefinite" />
+          </path>
+        </clipPath>
+    <!-- 英文文字遮罩 (放大字體) -->
+    <mask id="englishTextMask">
+        <rect width="1200" height="160" fill="white" />
+        <text x="600" y="60" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="black">
+          Geo-Hydro Engineering and Artificial Intelligence Recognition Technology Laboratory
+        </text>
+      </mask>
+      
+      <!-- 中文文字遮罩 -->
+      <mask id="chineseTextMask">
+        <rect width="1200" height="160" fill="white" />
+        <text x="600" y="95" font-family="'Microsoft JhengHei', Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="black">
+          地水工程與人工智慧辨識技術實驗室
+        </text>
+      </mask>
+      
+      <!-- 更快的光流效果 -->
+      <linearGradient id="englishLightFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="-50%" stop-color="rgba(255,255,255,0)">
+          <animate attributeName="offset" values="-50%;150%" dur="1.2s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="0%" stop-color="rgba(255,255,255,0.9)">
+          <animate attributeName="offset" values="0%;200%" dur="1.2s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="50%" stop-color="rgba(255,255,255,0)">
+          <animate attributeName="offset" values="50%;250%" dur="1.2s" repeatCount="indefinite" />
+        </stop>
+      </linearGradient>
+      
+      <linearGradient id="chineseLightFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="-50%" stop-color="rgba(255,255,255,0)">
+          <animate attributeName="offset" values="-50%;150%" dur="1s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="0%" stop-color="rgba(255,255,255,0.9)">
+          <animate attributeName="offset" values="0%;200%" dur="1s" repeatCount="indefinite" />
+        </stop>
+        <stop offset="50%" stop-color="rgba(255,255,255,0)">
+          <animate attributeName="offset" values="50%;250%" dur="1s" repeatCount="indefinite" />
+        </stop>
+      </linearGradient>
+    <!-- 新增閃爍效果 -->
+    <filter id="sparkle" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur" />
+        <feSpecularLighting in="blur" surfaceScale="5" specularConstant="1" specularExponent="20" lighting-color="#FFFFFF" result="specular">
+          <fePointLight x="50" y="50" z="200" />
+        </feSpecularLighting>
+        <feComposite in="specular" in2="SourceAlpha" operator="in" result="specular2" />
+        <feComposite in="SourceGraphic" in2="specular2" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" />
+      </filter>
+      
+      <!-- 新增霓虹燈效果 -->
+      <filter id="neon" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="2.5" result="blur1" />
+        <feColorMatrix in="blur1" type="matrix" values="1 0 0 0 0   0 1 0 0 0   0 0 1 0 0   0 0 0 15 -6" result="glow" />
+        <feComposite in="SourceGraphic" in2="glow" operator="over" />
+      </filter>
+    </defs>
+  <!-- 圓角矩形容器 -->
+  <g clip-path="url(#roundedRect)">
+    <!-- 背景 -->
+    <rect width="1200" height="160" fill="url(#bgGradient)">
+      <animate attributeName="opacity" values="1;0.9;1" dur="3s" repeatCount="indefinite" />
+    </rect>
+    
+    <!-- 增強的星星/粒子背景 -->
+    <g id="stars">
+      <circle cx="150" cy="25" r="1.2" fill="white">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1.2;1.8;1.2" dur="3s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="300" cy="30" r="1.2" fill="white">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1.2;1.8;1.2" dur="4s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="450" cy="22" r="1.2" fill="white">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1.2;1.8;1.2" dur="3.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="600" cy="28" r="1.2" fill="white">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.8s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1.2;1.8;1.2" dur="3.2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="750" cy="20" r="1.2" fill="white">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.2s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1.2;1.8;1.2" dur="4.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="900" cy="25" r="1.2" fill="white">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.6s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1.2;1.8;1.2" dur="3.2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1050" cy="30" r="1.2" fill="white">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.1s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1.2;1.8;1.2" dur="4.2s" repeatCount="indefinite" />
+      </circle>
+      
+      <!-- 新增更多星星 -->
+      <circle cx="100" cy="35" r="1" fill="white">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.7s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1;1.5;1" dur="3.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="200" cy="20" r="1" fill="white">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.3s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1;1.5;1" dur="4.2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="350" cy="25" r="1" fill="white">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.9s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1;1.5;1" dur="3.8s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="500" cy="32" r="1" fill="white">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.4s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1;1.5;1" dur="4.3s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="650" cy="18" r="1" fill="white">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1;1.5;1" dur="3.1s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="800" cy="28" r="1" fill="white">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.2s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1;1.5;1" dur="3.9s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="950" cy="22" r="1" fill="white">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="1.8s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1;1.5;1" dur="3.6s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1100" cy="35" r="1" fill="white">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="r" values="1;1.5;1" dur="4.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    
+    <!-- 增強的 AI 網絡可視化 - 加入連接線 -->
+    <g id="network" opacity="0.8">
+      <!-- 節點 - 調整垂直位置 -->
+      <circle cx="225" cy="90" r="2.5" fill="#ffeaa7" filter="url(#sparkle)">
+        <animate attributeName="r" values="2.5;4;2.5" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="375" cy="85" r="2.5" fill="#ffeaa7" filter="url(#sparkle)">
+        <animate attributeName="r" values="2.5;4;2.5" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="525" cy="95" r="2.5" fill="#ffeaa7" filter="url(#sparkle)">
+        <animate attributeName="r" values="2.5;4;2.5" dur="1.8s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="675" cy="88" r="2.5" fill="#ffeaa7" filter="url(#sparkle)">
+        <animate attributeName="r" values="2.5;4;2.5" dur="1.2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="825" cy="92" r="2.5" fill="#ffeaa7" filter="url(#sparkle)">
+        <animate attributeName="r" values="2.5;4;2.5" dur="2.2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="975" cy="87" r="2.5" fill="#ffeaa7" filter="url(#sparkle)">
+        <animate attributeName="r" values="2.5;4;2.5" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+      
+      <!-- 新增連接線 - 調整垂直位置 -->
+      <line x1="225" y1="90" x2="375" y2="85" stroke="#ffeaa7" stroke-width="0.5" opacity="0.3">
+        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite" />
+      </line>
+      <line x1="375" y1="85" x2="525" y2="95" stroke="#ffeaa7" stroke-width="0.5" opacity="0.3">
+        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.5s" repeatCount="indefinite" />
+      </line>
+      <line x1="525" y1="95" x2="675" y2="88" stroke="#ffeaa7" stroke-width="0.5" opacity="0.3">
+        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.2s" repeatCount="indefinite" />
+      </line>
+      <line x1="675" y1="88" x2="825" y2="92" stroke="#ffeaa7" stroke-width="0.5" opacity="0.3">
+        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="1.8s" repeatCount="indefinite" />
+      </line>
+      <line x1="825" y1="92" x2="975" y2="87" stroke="#ffeaa7" stroke-width="0.5" opacity="0.3">
+        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.3s" repeatCount="indefinite" />
+      </line>
+      <!-- 新增交叉連接線 - 調整垂直位置 -->
+      <line x1="225" y1="90" x2="525" y2="95" stroke="#ffeaa7" stroke-width="0.3" opacity="0.2">
+        <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3s" repeatCount="indefinite" />
+      </line>
+      <line x1="375" y1="85" x2="675" y2="88" stroke="#ffeaa7" stroke-width="0.3" opacity="0.2">
+        <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3.2s" repeatCount="indefinite" />
+      </line>
+      <line x1="525" y1="95" x2="825" y2="92" stroke="#ffeaa7" stroke-width="0.3" opacity="0.2">
+        <animate attributeName="opacity" values="0.2;0.5;0.2" dur="2.8s" repeatCount="indefinite" />
+      </line>
+      <line x1="675" y1="88" x2="975" y2="87" stroke="#ffeaa7" stroke-width="0.3" opacity="0.2">
+        <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3.5s" repeatCount="indefinite" />
+      </line>
+    </g>
+    
+    <!-- 增強的地質/地水層 - 調整垂直位置 -->
+    <g id="geoLayers">
+      <!-- 海洋水表面波紋效果 -->
+      <path d="M0,110 Q300,100 600,110 T1200,110 L1200,160 L0,160 Z" fill="url(#oceanFlow)" opacity="0.8">
+        <animate attributeName="d" 
+                 values="M0,110 Q300,100 600,110 T1200,110 L1200,160 L0,160 Z;
+                         M0,110 Q300,120 600,105 T1200,110 L1200,160 L0,160 Z;
+                         M0,110 Q300,100 600,110 T1200,110 L1200,160 L0,160 Z" 
+                 dur="8s" 
+                 repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.8;0.9;0.8" dur="4s" repeatCount="indefinite" />
+      </path>
+      <!-- 動畫海洋水流 - 調整垂直位置 -->
+      <g clip-path="url(#waterClip)">
+        <rect x="0" y="110" width="1200" height="50" fill="url(#oceanGradient)" opacity="0.7">
+          <animate attributeName="y" values="110;112;110" dur="5s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.7;0.8;0.7" dur="3s" repeatCount="indefinite" />
+        </rect>
+        <rect x="0" y="110" width="1200" height="50" fill="url(#oceanPattern)" opacity="0.8">
+          <animate attributeName="y" values="110;113;110" dur="4s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.8;0.9;0.8" dur="2s" repeatCount="indefinite" />
+        </rect>
+      </g>
+      
+      <!-- 土壤層 - 調整垂直位置 -->
+<!-- 修改後的第一土層 (y值增加4px) -->
+<path d="M0,134 C150,129 300,139 450,134 S750,144 900,134 S1050,129 1200,134 L1200,160 L0,160 Z" fill="url(#soilPattern)" opacity="0.9">
+  <animate attributeName="d" 
+           values="M0,124 C150,119 300,129 450,124 S750,134 900,124 S1050,119 1200,124 L1200,160 L0,160 Z;
+                   M0,124 C150,122 300,126 450,124 S750,129 900,124 S1050,122 1200,124 L1200,160 L0,160 Z;
+                   M0,124 C150,119 300,129 450,124 S750,134 900,124 S1050,119 1200,124 L1200,160 L0,160 Z" 
+           dur="10s" 
+           repeatCount="indefinite" />
+</path>
+
+<!-- 修改後的第二土層 (y值增加8px) -->
+<path d="M0,138 C225,133 375,143 525,138 S825,148 975,138 S1125,133 1200,138 L1200,160 L0,160 Z" fill="#795548" opacity="0.8">
+  <animate attributeName="d" 
+           values="M0,138 C225,133 375,143 525,138 S825,148 975,138 S1125,133 1200,138 L1200,160 L0,160 Z;
+                   M0,138 C225,136 375,140 525,138 S825,143 975,138 S1125,136 1200,138 L1200,160 L0,160 Z;
+                   M0,138 C225,133 375,143 525,138 S825,148 975,138 S1125,133 1200,138 L1200,160 L0,160 Z" 
+           dur="12s" 
+           repeatCount="indefinite" />
+</path>
+
+    </g>
+    <!-- 英文文字上的快速光流效果 -->
+    <rect width="1200" height="160" fill="url(#englishLightFlow)" opacity="0.6" mask="url(#englishTextMask)" />
+    
+    <!-- 中文文字上的快速光流效果 -->
+    <rect width="1200" height="160" fill="url(#chineseLightFlow)" opacity="0.6" mask="url(#chineseTextMask)" />
+    
+    <!-- 英文標題 - 使用漸變和流動效果 (放大字體) - 調整垂直位置 -->
+    <g filter="url(#textFlow)">
+      <text id="engTitle" x="600" y="60" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="url(#englishTextGradient)" filter="url(#glow)">
+        Geo-Hydro Engineering and Artificial Intelligence Recognition Technology Laboratory
+        <animate attributeName="opacity" values="0;1" dur="1s" begin="0.2s" fill="freeze" />
+        <animate attributeName="y" values="30;40" dur="1s" begin="0.2s" fill="freeze" />
+      </text>
+    </g>
+    
+    <!-- 中文標題 - 使用不同的漸變和流動效果 - 調整垂直位置 -->
+    <g filter="url(#textFlow)">
+      <text x="600" y="95" font-family="'Microsoft JhengHei', Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="url(#chineseTextGradient)" filter="url(#glow)">
+        地水工程與人工智慧辨識技術實驗室
+        <animate attributeName="opacity" values="0;1" dur="1s" begin="1s" fill="freeze" />
+        <animate attributeName="y" values="85;95" dur="1s" begin="1s" fill="freeze" />
+      </text>
+    </g>
+    <!-- 英文標題霓虹燈效果 - 調整垂直位置 -->
+    <g filter="url(#neon)">
+        <text x="600" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="rgba(255,255,255,0.15)">
+          Geo-Hydro Engineering and Artificial Intelligence Recognition Technology Laboratory
+        </text>
+      </g>
+      
+      <!-- 中文標題霓虹燈效果 - 調整垂直位置 -->
+      <g filter="url(#neon)">
+        <text x="600" y="95" font-family="'Microsoft JhengHei', Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="rgba(255,255,255,0.15)">
+          地水工程與人工智慧辨識技術實驗室
+        </text>
+      </g>
+      
+      <!-- 增強的浮動粒子 - 調整垂直位置 -->
+      <g filter="url(#particle)">
+        <circle cx="150" cy="70" r="1.2" fill="#ffffff" opacity="0.7">
+          <animate attributeName="cy" values="70;50;70" dur="10s" repeatCount="indefinite" />
+          <animate attributeName="cx" values="150;160;150" dur="10s" repeatCount="indefinite" />
+          <animate attributeName="r" values="1.2;1.8;1.2" dur="5s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="450" cy="75" r="1.2" fill="#ffffff" opacity="0.7">
+          <animate attributeName="cy" values="75;55;75" dur="8s" repeatCount="indefinite" />
+          <animate attributeName="cx" values="450;470;450" dur="8s" repeatCount="indefinite" />
+          <animate attributeName="r" values="1.2;1.8;1.2" dur="4s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="750" cy="65" r="1.2" fill="#ffffff" opacity="0.7">
+            <animate attributeName="cy" values="65;45;65" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="cx" values="750;770;750" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1.2;1.8;1.2" dur="4.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="1050" cy="70" r="1.2" fill="#ffffff" opacity="0.7">
+            <animate attributeName="cy" values="70;50;70" dur="11s" repeatCount="indefinite" />
+            <animate attributeName="cx" values="1050;1070;1050" dur="11s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1.2;1.8;1.2" dur="5.5s" repeatCount="indefinite" />
+          </circle>
+          
+          <!-- 新增更多浮動粒子 - 調整垂直位置 -->
+          <circle cx="300" cy="60" r="1" fill="#ffffff" opacity="0.6">
+            <animate attributeName="cy" values="60;45;60" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="cx" values="300;310;300" dur="12s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1;1.5;1" dur="6s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="600" cy="80" r="1" fill="#ffffff" opacity="0.6">
+            <animate attributeName="cy" values="80;65;80" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="cx" values="600;615;600" dur="9s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1;1.5;1" dur="4.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="900" cy="55" r="1" fill="#ffffff" opacity="0.6">
+            <animate attributeName="cy" values="55;40;55" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="cx" values="900;920;900" dur="10s" repeatCount="indefinite" />
+            <animate attributeName="r" values="1;1.5;1" dur="5s" repeatCount="indefinite" />
+          </circle>
+        </g>
+      </g>
+      
+      <!-- 圓角矩形邊框 -->
+      <rect x="0" y="0" width="1200" height="160" rx="20" ry="20" fill="none" stroke="url(#englishTextGradient)" stroke-width="1" opacity="0.5">
+        <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite" />
+      </rect>
+    </svg>
+      
+                    
