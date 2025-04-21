@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>中原大學土木工程學系-王凱 教授研究室-</title>
+     <!-- 基本 Meta 標籤 -->
+     <meta name="description" content="地水工程與人工智慧辨識技術研究室 Geo-Hydro Engineering with AI Recognition Technology Laboratory">
+     <meta name="keywords" content="中原大學,人工智慧,大地工程與水利工程,王凱,AI,AI辨識技術,土木工程">
+     <meta name="author" content="王凱 助理教授">
+
+    <!-- Open Graph 標籤 (用於社交媒體分享) -->
+    <meta property="og:title" content="中原大學土木工程學系-王凱 教授研究室">
+    <meta property="og:description" content="地水工程與人工智慧辨識技術研究室 Geo-Hydro Engineering with AI Recognition Technology Laboratory">
+    <meta property="og:image" content="assets/img/地水Logo.jpg">
+    <meta property="og:url" content="https://1986kaiwang.github.io/cycu/">
+    <meta property="og:type" content="website">
+  
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" href="favicon.png">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+<!-- 添加必要的 CSS 樣式 -->
+<style>
+  /* 標題底線樣式 */
+  .section-title {
+    margin-bottom: 2rem;
+  }
+  
+  /* 折疊面板樣式優化 */
+  .accordion-button {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    background-color: #fff;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: #f8f9fa;
+    color: #0d6efd;
+    box-shadow: none;
+  }
+  
+  .accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0, 0, 0, 0.125);
+  }
+  
+  .accordion-body {
+    padding: 1.5rem;
+  }
+  
+  /* 卡片樣式 */
+  .card {
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* 列表樣式 */
+  ul:not(.list-unstyled) {
+    padding-left: 1.2rem;
+  }
+  
+  ul:not(.list-unstyled) li {
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+  
+  ul:not(.list-unstyled) li::before {
+    content: "•";
+    color: #0d6efd;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+</style>
+
+<style>
+  /* 恢復側邊欄原始設計 */
+  .navmenu {
+    padding: 30px 0;
+  }
+  
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .navmenu ul li {
+    position: relative;
+    white-space: nowrap;
+  }
+  
+  /* 移除藍色導航點 */
+  .navmenu ul li::before {
+    display: none; /* 完全移除藍色導航點 */
+  }
+  
+  /* 導航項目樣式 */
+  .navmenu a {
+    display: flex;
+    align-items: center;
+    color: #a8a9b4;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    font-size: 15px;
+    text-decoration: none;
+  }
+  
+  /* 導航圖標樣式 */
+  .navmenu .navicon {
+    font-size: 20px;
+    padding-right: 10px;
+    color: #6f7180;
+  }
+  
+  /* 激活和懸停狀態 */
+  .navmenu a:hover, 
+  .navmenu .active, 
+  .navmenu li:hover > a {
+    color: #fff;
+  }
+  
+  .navmenu a:hover .navicon, 
+  .navmenu .active .navicon, 
+  .navmenu li:hover > a .navicon {
+    color: #149ddd;
+  }
+  
+  /* Logo 樣式 */
+  .logo {
+    text-decoration: none;
+    padding: 15px 0;
+  }
+  
+  .sitename {
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  /* 社交鏈接樣式 */
+  .social-links {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #212431;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+  }
+  
+  .social-links a:hover {
+    background: #149ddd;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* 確保側邊欄在移動設備上正確顯示 */
+  @media (max-width: 1199px) {
+    .header {
+      left: -300px;
+    }
+    
+    .main {
+      margin-left: 0;
+    }
+  }
+  
+  /* 確保整體側邊欄寬度與原始設計一致 */
+  #header {
+    width: 300px;
+  }
+</style>
+
+<style>
+  /* 調整首頁與上方間距 */
+  #Home {
+    padding-top: 30px; /* 減少頂部間距 */
+  }
+  
+  /* 調整側邊欄導航間距 */
+  .navmenu {
+    padding: 15px 0; /* 減少導航菜單的上下間距 */
+  }
+  
+  /* 調整導航項目間距 */
+  .navmenu a {
+    padding: 8px 15px; /* 減少每個導航項的上下間距 */
+    margin-bottom: 4px; /* 減少項目間的間距 */
+  }
+  
+  /* 調整 logo 間距 */
+  .logo {
+    padding: 10px 0; /* 減少 logo 區域的間距 */
+  }
+  
+  /* 調整社交鏈接間距 */
+  .social-links {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* 確保側邊欄其他元素間距協調 */
+  .profile-img {
+    margin-bottom: 10px;
+  }
+  
+  /* 保持原有的側邊欄設計，不顯示藍色導航點 */
+  .navmenu ul li::before {
+    display: none;
+  }
+</style>
+
+<!-- 添加必要的CSS樣式 -->
+<style>
+  /* 圓餅圖容器 */
+  .pie-chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 50px;
+  }
+  
+  /* 圓餅圖 */
+  .pie-chart {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 保持圓形 */
+    border-radius: 50%;
+    background: #f5f5f5;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  /* 圓餅圖中心 */
+  .pie-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 40%;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .pie-center-content {
+    text-align: center;
+  }
+  
+  .pie-center-content h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .pie-center-content p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* 圓餅圖扇區 */
+  .pie-slice {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transition: all 0.5s ease;
+    opacity: 0;
+  }
+  
+  /* 技能圖標 */
+  .skill-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    z-index: 5;
+    font-size: 20px;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  /* 技能說明容器 */
+  .skills-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  /* 技能說明項 */
+  .skill-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 15px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .skill-item:hover {
+    transform: translateY(-3px);
+  }
+  
+  .skill-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+  }
+  
+  .skill-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .skill-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .skill-percentage {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* 動畫類 */
+  .pie-slice.active {
+    opacity: 1;
+  }
+  
+  /* 圓環動畫 */
+  @keyframes circleAnimation {
+    0% {
+      stroke-dashoffset: 1000;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  .circle-animation {
+    animation: circleAnimation 2s ease-out forwards;
+  }
+  
+  /* 技能顏色 */
+  .skill-1-color { background-color: #4361ee; }
+  .skill-2-color { background-color: #3a0ca3; }
+  .skill-3-color { background-color: #7209b7; }
+  .skill-4-color { background-color: #f72585; }
+  .skill-5-color { background-color: #4cc9f0; }
+  .skill-6-color { background-color: #4895ef; }
+  
+  /* 懸停效果 */
+  .skill-highlight {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    z-index: 5;
+  }
+  
+  /* 響應式調整 */
+  @media (max-width: 768px) {
+    .pie-center-content h4 {
+      font-size: 16px;
+    }
+    
+    .pie-center-content p {
+      font-size: 12px;
+    }
+    
+    .skill-name {
+      font-size: 14px;
+    }
+    
+    .skill-percentage {
+      font-size: 12px;
+    }
+    
+    .skill-icon {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+    }
+  }
+</style>
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/地水Logo-1.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename" style="margin: 0; padding: 0; text-align: center; width: 100%;">
+          <span style="font-size: 20px; white-space: nowrap; display: block;">地水工程與AI辨識技術研究室</span>
+          <span style="font-size: 8px; white-space: nowrap; display: block;">Geo-Hydro Engineering with AI Recognition Technology Laboratory</span>
+        </h1>
+      </a>
+      
+    <div class="social-links text-center">
+        <a href="#" class="facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="university" title="中原大學"><i class="bi bi-bank"></i></a>
+        <a href="#" class="google-scholar" title="Google Scholar"><i class="bi bi-google"></i></a>
+        <a href="#" class="research-gate" title="Research Gate"><i class="bi bi-diagram-3"></i></a>
+        <a href="#" class="orcid" title="ORCID"><i class="bi bi-credit-card-2-front"></i></a>
+      </div>      
+      
+    <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#Home" class="active"><i class="bi bi-house navicon"></i>首頁</a></li>
+          <li><a href="#about"><i class="bi bi-person navicon"></i>研究室計畫主持人</a></li>
+         <!-- <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> 關於我</a></li> -->
+          <li><a href="#research"><i class="bi bi-graph-up navicon"></i> 學術研究</a></li>
+          <li><a href="#team"><i class="bi bi-images navicon"></i> 團隊</a></li>
+          <li><a href="#teaching"><i class="bi bi-mortarboard navicon"></i> 教學</a></li>
+          <li><a href="#news"><i class="bi bi-bell navicon"></i> 最新消息</a></li>
+          <li><a href="#publications"><i class="bi bi-journal-richtext navicon"></i> 發表</a></li>
+          <!-- <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="#">Dropdown 1</a></li>
+            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="#">Deep Dropdown 1</a></li>
+                <li><a href="#">Deep Dropdown 2</a></li>
+                <li><a href="#">Deep Dropdown 3</a></li>
+                <li><a href="#">Deep Dropdown 4</a></li>
+                <li><a href="#">Deep Dropdown 5</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Dropdown 2</a></li>
+            <li><a href="#">Dropdown 3</a></li>
+            <li><a href="#">Dropdown 4</a></li>
+          </ul>
+        </li>  -->
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> 聯絡我們</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="Home" class="hero section dark-background">
+
+      <img src="assets/img/hero-bg.JPG" alt="" data-aos="fade-in" class="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+       <!-- <h2>Kai Wang</h2>
+        <p>I'm <span class="typed" data-typed-items="a Professor from Civil Engineering, Sensor Developer, a researcher in geotechnical and hydraulic engineering">a Professor from Civil Engineering</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+      </div>-->
+
+    <h2>王 凱</h2>
+    <p>我是 <span class="typed" data-typed-items="中原大學土木工程學系 助理教授, 一名大地與水利工程師, 一名從事AI辨識技術應用於工程問題上的研究學者">中原大學土木工程學系教授</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+  </div> 
+
+
+
+</section><!-- /Hero Section -->
+
+<!-- About Section -->
+<section id="about" class="about section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>歡迎來到 地水工程與AI辨識技術研究室</h2>
+    <p>王凱 博士 | 研究室計畫主持人</p>
+    <p>作為專注於大地與水利工程跨領域的研究學者，我致力於融合創新監測技術、數值模擬與人工智慧，為當代工程技術挑戰提供前瞻性解決方案。我們透過尖端AI技術研究，突破傳統工程限制，開發新世代感測方法，為工程安全與環境永續貢獻專業。對工程災害預防、人工智慧應用或監測物聯網研究有熱忱的您，誠摯歡迎加入我們的團隊。​</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4 justify-content-center">
+      <div class="col-lg-4">
+        <img src="assets/img/my-profile-img.jpg" class="img-fluid rounded" alt="王凱助理教授">
+      </div>
+      <div class="col-lg-8 content">
+        <h2>大地工程與水利工程專家 | 人工智慧應用研究學者</h2>
+        <p class="fst-italic py-3">
+          專注於橋墩沖刷監測、結構健康監測與人工智慧在土木工程領域的創新應用，致力於解決工程實務問題並培育新一代土木工程專業人才。
+        </p>
+        <div class="row">
+          <div class="col-lg-6">
+            <ul class="info-list">
+              <li>
+                <i class="bi bi-mortarboard"></i>
+                <div>
+                  <strong>學歷:</strong>
+                  <span>國立陽明交通大學土木工程博士</span>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-globe"></i>
+                <div>
+                  <strong>網站:</strong>
+                  <span>1986kaiwang.github.io/cycu</span>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-telephone-fill"></i>
+                <div>
+                  <strong>電話:</strong>
+                  <span>+886-3-265-4229</span>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-building"></i>
+                <div>
+                  <strong>辦公室:</strong>
+                  <span>中原大學土木工程學系 土木館508室</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <ul class="info-list">
+              <li>
+                <i class="bi bi-tools"></i>
+                <div>
+                  <strong>專長:</strong>
+                  <span>大地工程、水利工程</span>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-person-badge"></i>
+                <div>
+                  <strong>職稱:</strong>
+                  <span>助理教授</span>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-envelope-fill"></i>
+                <div>
+                  <strong>電子郵件:</strong>
+                  <span>kaiwang@cycu.edu.tw</span>
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-award"></i>
+                <div>
+                  <strong>加入研究:</strong>
+                  <span>實驗室提供獎學金於碩博士班學生 歡迎洽詢</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="py-3">
+          2019年取得國立陽明交通大學土木工程博士學位，論文研究「改良式時域反射法於橋墩沖刷監測之應用」。曾任國立陽明交通大學土木工程學系博士後研究員， 受國家科學委員會延攬，主導整合自動監測技術、數據評估、河道動床模擬與水工實驗研究。現任中原大學土木工程學系助理教授， 專注於機器學習與自動預測技術在大地及水利工程之創新應用，致力培育具備跨領域視野的土木工程人才。
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .info-list li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    
+    .info-list li i {
+      font-size: 18px;
+      color: #1e5091;
+      width: 36px;
+      height: 36px;
+      background: rgba(30, 80, 145, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      margin-right: 15px;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+    
+    .info-list li:hover i {
+      background: #1e5091;
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+    
+    .info-list li div {
+      flex-grow: 1;
+    }
+    
+    .info-list li strong {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 3px;
+      color: #333;
+    }
+    
+    .info-list li span {
+      color: #555;
+      line-height: 1.4;
+    }
+  </style>
+
+</section><!-- /About Section -->
+
+<!-- Stats Section -->
+<section id="stats" class="stats section">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item">
+          <i class="bi bi-journal-richtext"></i>
+          <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+          <p><strong>學術論文</strong> <span>期刊與會議論文發表</span></p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item">
+          <i class="bi bi-award"></i>
+          <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+          <p><strong>研究計畫</strong> <span>國科會與產學合作專案</span></p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item">
+          <i class="bi bi-mortarboard"></i>
+          <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+          <p><strong>指導學生</strong> <span>碩博士與專題研究生</span></p>
+        </div>
+      </div><!-- End Stats Item -->
+
+      <div class="col-lg-3 col-md-6">
+        <div class="stats-item">
+          <i class="bi bi-building"></i>
+          <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
+          <p><strong>合作機構</strong> <span>學研單位與產業合作</span></p>
+        </div>
+      </div><!-- End Stats Item -->
+
+    </div>
+
+  </div>
+<!-- 學經歷與榮譽事蹟 Section -->
+<section id="學經歷" class="resume section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>學經歷與榮譽事蹟</h2>
+    <p>我的學術背景與專業經驗</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <!-- 學術背景 -->
+    <div class="row mb-5">
+      <div class="col-md-10 mx-auto">
+        <div class="mb-4">
+          <h5 class="text-muted text-uppercase fw-light" style="letter-spacing: 2px;">學術背景</h5>
+          <h3 class="fw-bold">學歷</h3>
+        </div>
+  
+
+<!-- 首先添加必要的CSS樣式 -->
+<style>
+  /* 時間線樣式 */
+  .timeline {
+    position: relative;
+    padding-left: 50px;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: #149ddd;
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .timeline-icon {
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #149ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+  }
+  
+  .timeline-date {
+    display: inline-block;
+    padding: 5px 15px;
+    background: #f8f9fa;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #149ddd;
+  }
+  
+  /* 卡片懸停效果增強 */
+  .timeline-card {
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    padding-left: 15px;
+  }
+  
+  .timeline-card:hover {
+    border-left: 3px solid #149ddd;
+    transform: translateX(5px);
+  }
+  
+  /* 折疊面板樣式 */
+  .section-collapse .card-header {
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .section-collapse .card-header:hover {
+    background-color: #e9ecef;
+  }
+  
+  .section-collapse .card-header h3 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .section-collapse .card-header .section-icon {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #149ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+  }
+  
+  .section-collapse .collapse-icon {
+    transition: transform 0.3s;
+  }
+  
+  .section-collapse .collapsed .collapse-icon {
+    transform: rotate(-90deg);
+  }
+  
+  /* 增加視覺反饋效果 */
+  .section-collapse .card-header.active {
+    background-color: #e3f2fd;
+    border-left: 4px solid #149ddd;
+  }
+  
+  .section-collapse .card-header.active .section-icon {
+    background: #0d6efd;
+  }
+</style>
+
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+  <!-- 可折疊的三大區塊 -->
+  <div class="row mb-4">
+    <div class="col-md-10 mx-auto">
+      
+      <!-- 學歷區塊 -->
+      <div class="card mb-4 section-collapse">
+        <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#collapseEducation" aria-expanded="false">
+          <h3 class="fw-bold">
+            <span class="section-icon"><i class="bi bi-mortarboard-fill"></i></span>
+            學歷
+            <span class="ms-auto collapse-icon"><i class="bi bi-chevron-down"></i></span>
+          </h3>
+        </div>
+        <div id="collapseEducation" class="collapse">
+          <div class="card-body">
+            <!-- 時間線風格的學歷 -->
+            <div class="timeline">
+              <!-- 博士學位 -->
+              <div class="timeline-item">
+                <div class="timeline-icon">
+                  <i class="bi bi-award"></i>
+                </div>
+                <div class="timeline-card">
+                  <div class="timeline-date">
+                    <i class="bi bi-calendar-event me-1"></i>2019年10月
+                  </div>
+                  <div class="card shadow-sm">
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        <i class="bi bi-building me-2 text-primary"></i>國立陽明交通大學土木工程學系 - 博士
+                      </h5>
+                      <div class="row mt-3">
+                        <div class="col-md-6">
+                          <p><strong>論文題目：</strong>「改良式時域反射法於橋墩沖刷監測之應用」</p>
+                          <p><strong>指導教授：</strong>林志平 博士</p>
+                        </div>
+                        <div class="col-md-6">
+                          <p><strong>研究專長：</strong></p>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>現地監測技術</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>感測器開發與數位訊號分析</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>永續風險評估與災害防治</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>樁基礎工程</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i>水文/水力模擬</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 學士學位 -->
+              <div class="timeline-item">
+                <div class="timeline-icon">
+                  <i class="bi bi-mortarboard"></i>
+                </div>
+                <div class="timeline-card">
+                  <div class="timeline-date">
+                    <i class="bi bi-calendar-event me-1"></i>2009年6月
+                  </div>
+                  <div class="card shadow-sm">
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        <i class="bi bi-building me-2 text-primary"></i>國立臺灣海洋大學河海工程學系 - 學士
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 工作經歷區塊 -->
+      <div class="card mb-4 section-collapse">
+        <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#collapseExperience" aria-expanded="false">
+          <h3 class="fw-bold">
+            <span class="section-icon"><i class="bi bi-briefcase-fill"></i></span>
+            經歷
+            <span class="ms-auto collapse-icon"><i class="bi bi-chevron-down"></i></span>
+          </h3>
+        </div>
+        <div id="collapseExperience" class="collapse">
+          <div class="card-body">
+            <!-- 時間線風格的經歷 -->
+            <div class="timeline">
+              <!-- 中原大學 -->
+              <div class="timeline-item">
+                <div class="timeline-icon">
+                  <i class="bi bi-person-workspace"></i>
+                </div>
+                <div class="timeline-card">
+                  <div class="timeline-date">
+                    <i class="bi bi-calendar-event me-1"></i>2023年8月 - 至今
+                  </div>
+                  <div class="card shadow-sm">
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        <i class="bi bi-building me-2 text-primary"></i>中原大學土木工程學系 - 助理教授
+                      </h5>
+                      <p class="mt-3"><strong>研究方向：</strong>機器學習與自動預測技術</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 博士後研究員 -->
+              <div class="timeline-item">
+                <div class="timeline-icon">
+                  <i class="bi bi-graph-up"></i>
+                </div>
+                <div class="timeline-card">
+                  <div class="timeline-date">
+                    <i class="bi bi-calendar-event me-1"></i>2019年10月 - 2023年7月
+                  </div>
+                  <div class="card shadow-sm">
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        <i class="bi bi-building me-2 text-primary"></i>國立陽明交通大學土木工程學系 - 國科會延攬博士後研究員
+                      </h5>
+                      <p class="mt-3"><strong>主要研究項目：</strong></p>
+                      <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">整合自動監測技術、數據評估、移動床模擬與水力實驗，進行全流域綜合災害管理與影響評估</li>
+                        <li class="list-group-item">長距離檢測、探勘、監測與地理空間數據整合，用於堤防風險評估</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 研究助理 -->
+              <div class="timeline-item">
+                <div class="timeline-icon">
+                  <i class="bi bi-tools"></i>
+                </div>
+                <div class="timeline-card">
+                  <div class="timeline-date">
+                    <i class="bi bi-calendar-event me-1"></i>2010年9月 - 2017年6月
+                  </div>
+                  <div class="card shadow-sm">
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        <i class="bi bi-building me-2 text-primary"></i>防災與水環境研究中心 - 研究助理
+                      </h5>
+                      <p class="mt-3"><strong>研究項目：</strong>石門水庫懸浮泥沙運移監測研究</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 榮耀事蹟區塊 -->
+      <div class="card mb-4 section-collapse">
+        <div class="card-header collapsed" data-bs-toggle="collapse" data-bs-target="#collapseHonors" aria-expanded="false">
+          <h3 class="fw-bold">
+            <span class="section-icon"><i class="bi bi-trophy-fill"></i></span>
+            榮耀事蹟
+            <span class="ms-auto collapse-icon"><i class="bi bi-chevron-down"></i></span>
+          </h3>
+        </div>
+        <div id="collapseHonors" class="collapse">
+          <div class="card-body">
+            <div class="row">
+              <!-- 研究計畫 -->
+              <div class="col-md-6 mb-4">
+                <div class="card shadow-sm h-100">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <i class="bi bi-lightbulb me-2 text-warning"></i>研究計畫與成果
+                    </h5>
+                    <ul class="list-group list-group-flush mt-3">
+                      <li class="list-group-item"><i class="bi bi-check2-circle text-success me-2"></i>應用AI技術確定樁基礎承載力</li>
+                      <li class="list-group-item"><i class="bi bi-check2-circle text-success me-2"></i>OpenFOAM 3D局部沖刷模擬橋墩</li>
+                      <li class="list-group-item"><i class="bi bi-check2-circle text-success me-2"></i>設計創新流量分流與擾流方法，防止橋墩周圍局部沖刷</li>
+                      <li class="list-group-item"><i class="bi bi-check2-circle text-success me-2"></i>TDR下水道污泥監測</li>
+                      <li class="list-group-item"><i class="bi bi-check2-circle text-success me-2"></i>焚化爐再生骨材與紅土混合的土壤力學行為與三軸試驗</li>
+                      <li class="list-group-item"><i class="bi bi-check2-circle text-success me-2"></i>Plaxis 3D樁載試驗模擬</li>
+                      <li class="list-group-item"><i class="bi bi-check2-circle text-success me-2"></i>基於AI的圖像識別(YOLO)用於橋墩沖刷</li>
+                      <li class="list-group-item"><i class="bi bi-check2-circle text-success me-2"></i>基於AI的土壤含水量預測</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 專業領域 -->
+              <div class="col-md-6 mb-4">
+                <div class="card shadow-sm h-100">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <i class="bi bi-diagram-3 me-2 text-info"></i>專業研究領域
+                    </h5>
+                    <div class="row mt-3">
+                      <div class="col-md-6">
+                        <h6 class="text-primary"><i class="bi bi-geo-alt me-2"></i>大地工程</h6>
+                        <ul class="list-unstyled">
+                          <li><i class="bi bi-arrow-right-circle me-2"></i>感測器開發</li>
+                          <li><i class="bi bi-arrow-right-circle me-2"></i>泥沙運移模擬</li>
+                          <li><i class="bi bi-arrow-right-circle me-2"></i>跨河結構安全監測與對策</li>
+                          <li><i class="bi bi-arrow-right-circle me-2"></i>樁基礎工程</li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6">
+                        <h6 class="text-primary"><i class="bi bi-water me-2"></i>水利工程</h6>
+                        <ul class="list-unstyled">
+                          <li><i class="bi bi-arrow-right-circle me-2"></i>先進流場測量技術</li>
+                          <li><i class="bi bi-arrow-right-circle me-2"></i>地下水資源研究</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+   
+
+<!-- Research Section -->
+<section id="research" class="research section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>學術研究</h2>
+    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+  </div><!-- End Section Title -->
+
+</div>
+</section><!-- /Services Section -->
+
+
+</section><!-- /Stats Section -->
+
+<!-- Skill Section Title -->
+<div class="container section-title" data-aos="fade-up">
+  <h2>專業技能</h2>
+  <p>跨領域研究與教學專長，結合大地工程、水利工程與人工智慧應用</p>
+</div><!-- End Section Title -->
+
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <!-- 圓餅圖容器 -->
+      <div class="pie-chart-container" data-aos="zoom-in">
+        <div class="pie-chart" id="skills-pie-chart">
+          <!-- 圓餅圖中心 -->
+          <div class="pie-center">
+            <div class="pie-center-content">
+              <h4>專業技能</h4>
+              <p>點擊查看詳情</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 技能說明 -->
+      <div class="skills-legend" data-aos="fade-up" data-aos-delay="200">
+        <div class="skill-item" data-index="0">
+          <div class="skill-color skill-1-color"><i class="bi bi-water"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">水利工程與沖刷監測</span>
+            <span class="skill-percentage">23%</span>
+          </div>
+        </div>
+        
+        <div class="skill-item" data-index="1">
+          <div class="skill-color skill-2-color"><i class="bi bi-geo-alt"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">大地工程與樁基礎分析</span>
+            <span class="skill-percentage">22%</span>
+          </div>
+        </div>
+        
+        <div class="skill-item" data-index="2">
+          <div class="skill-color skill-3-color"><i class="bi bi-cpu"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">感測器開發與訊號分析</span>
+            <span class="skill-percentage">17%</span>
+          </div>
+        </div>
+        
+        <div class="skill-item" data-index="3">
+          <div class="skill-color skill-4-color"><i class="bi bi-grid-3x3"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">CFD數值模擬與應用</span>
+            <span class="skill-percentage">15%</span>
+          </div>
+        </div>
+        
+        <div class="skill-item" data-index="4">
+          <div class="skill-color skill-5-color"><i class="bi bi-robot"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">人工智慧與機器學習</span>
+            <span class="skill-percentage">14%</span>
+          </div>
+        </div>
+        
+        <div class="skill-item" data-index="5">
+          <div class="skill-color skill-6-color"><i class="bi bi-shield-check"></i></div>
+          <div class="skill-info">
+            <span class="skill-name">災害風險評估與管理</span>
+            <span class="skill-percentage">9%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section><!-- /Skills Section -->
+
+
+    <!-- Portfolio Section -->
+    <section id="team" class="portfolio section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>團隊</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">App</li>
+            <li data-filter=".filter-product">Product</li>
+            <li data-filter=".filter-branding">Branding</li>
+            <li data-filter=".filter-books">Books</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>App 1</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Product 1</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/product-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Branding 1</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/branding-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Books 1</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/books-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>App 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Product 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Branding 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Books 2</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/books-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>App 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Product 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Branding 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Books 3</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+                  <a href="assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Services Section -->
+    <section id="teaching" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>教學</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Lorem Ipsum</a></h4>
+              <p class="description1">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Dolor Sitema</a></h4>
+              <p class="description1">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Sed ut perspiciatis</a></h4>
+              <p class="description1">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Magni Dolores</a></h4>
+              <p class="description1">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Nemo Enim</a></h4>
+              <p class="description1">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
+            <div>
+              <h4 class="title"><a href="service-details.html" class="stretched-link">Eiusmod Tempor</a></h4>
+              <p class="description1">地水工程與人工智慧辨識技術研究室 Geo-Hydro Engineering with AI Recognition Technology Laboratory</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Testimonials Section -->
+    <section id="news" class="testimonials section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>最新消息</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 1
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+</section><!-- /publications Section -->
+
+<!-- Publications Section -->
+<section id="publications" class="publications section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>發表</h2>
+    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+  </div><!-- End Section Title -->
+
+</div>
+</section><!-- /Services Section -->
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>聯絡我們</h2>
+        <p>如您對我們的相關研究或學術合作感興趣，無論任何問題，都歡迎您與我們聯繫！</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-5">
+
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>地址</h3>
+                  <p>320314 桃園市中壢區中北路200號 中原大學土木工程學系</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>電話</h3>
+                  <p>+886-3-265-4229</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>電子郵件</h3>
+                  <p>kaiwang@cycu.edu.tw</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.8296671149656!2d121.23826807525903!3d24.957382777778193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468221447a0f021%3A0x2b86d2650bb8bcff!2Z5Lit5Y6f5aSn5a24!5e1!3m2!1szh-TW!2stw!4v1713432751946!5m2!1szh-TW!2stw" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2">您的大名</label>
+                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2">您的信箱（電子郵件）</label>
+                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="subject-field" class="pb-2">信件主題</label>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2">訊息內容</label>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">傳送訊息</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+ <!-- 添加必要的 JavaScript 代碼 -->
+
+ <!--<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 獲取所有手風琴按鈕
+    const accordionButtons = document.querySelectorAll('#educationAccordion .accordion-button');
+    
+    // 為每個按鈕添加點擊事件
+    accordionButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // 獲取目標折疊面板
+        const target = document.querySelector(this.getAttribute('data-bs-target'));
+        
+        // 檢查是否已展開
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        // 切換狀態
+        if (isExpanded) {
+          // 如果已展開，則折疊
+          new bootstrap.Collapse(target).hide();
+          this.setAttribute('aria-expanded', 'false');
+          this.classList.add('collapsed');
+        } else {
+          // 如果已折疊，則展開
+          new bootstrap.Collapse(target).show();
+          this.setAttribute('aria-expanded', 'true');
+          this.classList.remove('collapsed');
+        }
+      });
+    });
+  });
+  </script>
+  
+  <script>
+    // 確保折疊圖標正確旋轉
+    document.querySelectorAll('.card-header').forEach(header => {
+      header.addEventListener('click', function() {
+        // 切換collapsed類
+        this.classList.toggle('collapsed');
+      });
+    });
+  </script> -->
+
+
+
+<!-- 添加必要的JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 為所有折疊面板標題添加點擊事件
+    document.querySelectorAll('.section-collapse .card-header').forEach(header => {
+      header.addEventListener('click', function() {
+        // 切換當前標題的collapsed類
+        this.classList.toggle('collapsed');
+        this.classList.toggle('active');
+        
+        // 獲取目標折疊區域
+        const targetId = this.getAttribute('data-bs-target');
+        const targetCollapse = document.querySelector(targetId);
+        
+        // 切換折疊區域的顯示狀態
+        if (targetCollapse.classList.contains('show')) {
+          targetCollapse.classList.remove('show');
+          this.setAttribute('aria-expanded', 'false');
+        } else {
+          targetCollapse.classList.add('show');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  });
+</script>
+
+
+<!-- 添加必要的JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 技能數據（已轉換為總計100%）
+    const skills = [
+      { name: '水利工程與沖刷監測', percentage: 23, color: '#4361ee', icon: 'bi bi-water' },
+      { name: '大地工程與樁基礎分析', percentage: 22, color: '#3a0ca3', icon: 'bi bi-geo-alt' },
+      { name: '感測器開發與訊號分析', percentage: 17, color: '#7209b7', icon: 'bi bi-cpu' },
+      { name: 'CFD數值模擬與應用', percentage: 15, color: '#f72585', icon: 'bi bi-grid-3x3' },
+      { name: '人工智慧與機器學習', percentage: 14, color: '#4cc9f0', icon: 'bi bi-robot' },
+      { name: '災害風險評估與管理', percentage: 9, color: '#4895ef', icon: 'bi bi-shield-check' }
+    ];
+    
+    // 獲取圓餅圖容器
+    const pieChart = document.getElementById('skills-pie-chart');
+    const pieCenter = document.querySelector('.pie-center-content');
+    const skillItems = document.querySelectorAll('.skill-item');
+    
+    // 創建SVG元素
+    const svgNS = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(svgNS, "svg");
+    svg.setAttribute("viewBox", "0 0 100 100");
+    svg.style.position = "absolute";
+    svg.style.top = "0";
+    svg.style.left = "0";
+    svg.style.width = "100%";
+    svg.style.height = "100%";
+    
+    // 添加動畫圓環
+    const circle = document.createElementNS(svgNS, "circle");
+    circle.setAttribute("cx", "50");
+    circle.setAttribute("cy", "50");
+    circle.setAttribute("r", "48");
+    circle.setAttribute("fill", "none");
+    circle.setAttribute("stroke", "#ddd");
+    circle.setAttribute("stroke-width", "0.5");
+    svg.appendChild(circle);
+    
+    // 添加動畫圓環
+    const animatedCircle = document.createElementNS(svgNS, "circle");
+    animatedCircle.setAttribute("cx", "50");
+    animatedCircle.setAttribute("cy", "50");
+    animatedCircle.setAttribute("r", "48");
+    animatedCircle.setAttribute("fill", "none");
+    animatedCircle.setAttribute("stroke", "#149ddd");
+    animatedCircle.setAttribute("stroke-width", "1");
+    animatedCircle.setAttribute("stroke-dasharray", "1000");
+    animatedCircle.setAttribute("stroke-dashoffset", "1000");
+    animatedCircle.setAttribute("stroke-linecap", "round");
+    svg.appendChild(animatedCircle);
+    
+    // 計算總和（應為100）
+    const total = skills.reduce((sum, skill) => sum + skill.percentage, 0);
+    
+    // 繪製圓餅圖
+    let startAngle = 0;
+    skills.forEach((skill, index) => {
+      // 計算角度
+      const angle = (skill.percentage / total) * 360;
+      const endAngle = startAngle + angle;
+      
+      // 創建路徑
+      const path = document.createElementNS(svgNS, "path");
+      const x1 = 50 + 48 * Math.cos(startAngle * Math.PI / 180);
+      const y1 = 50 + 48 * Math.sin(startAngle * Math.PI / 180);
+      const x2 = 50 + 48 * Math.cos(endAngle * Math.PI / 180);
+      const y2 = 50 + 48 * Math.sin(endAngle * Math.PI / 180);
+      
+      // 大圓弧標誌（角度>180度時為1，否則為0）
+      const largeArcFlag = angle > 180 ? 1 : 0;
+      
+      // 定義路徑
+      const d = `
+        M 50 50
+        L ${x1} ${y1}
+        A 48 48 0 ${largeArcFlag} 1 ${x2} ${y2}
+        Z
+      `;
+      
+      path.setAttribute("d", d);
+      path.setAttribute("fill", skill.color);
+      path.setAttribute("data-name", skill.name);
+      path.setAttribute("data-percentage", skill.percentage);
+      path.setAttribute("class", "pie-slice");
+      path.style.opacity = 0;
+      
+      // 添加圖標
+      const iconAngle = startAngle + (angle / 2);
+      const iconX = 50 + 35 * Math.cos(iconAngle * Math.PI / 180);
+      const iconY = 50 + 35 * Math.sin(iconAngle * Math.PI / 180);
+      
+      const iconDiv = document.createElement('div');
+      iconDiv.className = `skill-icon`;
+      iconDiv.style.left = `${iconX}%`;
+      iconDiv.style.top = `${iconY}%`;
+      iconDiv.style.backgroundColor = skill.color;
+      iconDiv.style.transform = 'translate(-50%, -50%)';
+      iconDiv.style.opacity = '0';
+      iconDiv.innerHTML = `<i class="${skill.icon}"></i>`;
+      
+      // 添加交互
+      path.addEventListener('mouseenter', () => {
+        // 更新中心內容
+        pieCenter.innerHTML = `
+          <h4>${skill.name}</h4>
+          <p>${skill.percentage}%</p>
+        `;
+        
+        // 高亮當前扇區
+        path.style.transform = "scale(1.05)";
+        path.style.filter = "brightness(1.1)";
+        path.style.zIndex = "5";
+        
+        // 高亮圖標
+        iconDiv.style.transform = 'translate(-50%, -50%) scale(1.2)';
+      });
+      
+      path.addEventListener('mouseleave', () => {
+        // 恢復中心內容
+        pieCenter.innerHTML = `
+          <h4>專業技能</h4>
+          <p>點擊查看詳情</p>
+        `;
+        
+        // 移除高亮
+        path.style.transform = "";
+        path.style.filter = "";
+        path.style.zIndex = "";
+        
+        // 恢復圖標
+        iconDiv.style.transform = 'translate(-50%, -50%)';
+      });
+      
+      // 添加圖標交互
+      iconDiv.addEventListener('mouseenter', () => {
+        // 更新中心內容
+        pieCenter.innerHTML = `
+          <h4>${skill.name}</h4>
+          <p>${skill.percentage}%</p>
+        `;
+        
+        // 高亮當前扇區
+        path.style.transform = "scale(1.05)";
+        path.style.filter = "brightness(1.1)";
+        path.style.zIndex = "5";
+        
+        // 高亮圖標
+        iconDiv.style.transform = 'translate(-50%, -50%) scale(1.2)';
+      });
+      
+      iconDiv.addEventListener('mouseleave', () => {
+        // 恢復中心內容
+        pieCenter.innerHTML = `
+          <h4>專業技能</h4>
+          <p>點擊查看詳情</p>
+        `;
+        
+        // 移除高亮
+        path.style.transform = "";
+        path.style.filter = "";
+        path.style.zIndex = "";
+        
+        // 恢復圖標
+        iconDiv.style.transform = 'translate(-50%, -50%)';
+      });
+      
+      svg.appendChild(path);
+      pieChart.appendChild(iconDiv);
+      startAngle = endAngle;
+    });
+    
+    // 將SVG添加到圓餅圖容器
+    pieChart.appendChild(svg);
+    
+    // 動畫顯示扇區和圓環
+    setTimeout(() => {
+      // 顯示圓環動畫
+      animatedCircle.classList.add('circle-animation');
+      
+      // 顯示扇區
+      const slices = document.querySelectorAll('.pie-slice');
+      slices.forEach((slice, index) => {
+        setTimeout(() => {
+          slice.style.opacity = 1;
+        }, index * 150);
+      });
+      
+      // 顯示圖標
+      const icons = document.querySelectorAll('.skill-icon');
+      icons.forEach((icon, index) => {
+        setTimeout(() => {
+          icon.style.opacity = 1;
+        }, 800 + index * 150);
+      });
+    }, 500);
+    
+    // 添加技能項的交互
+    skillItems.forEach((item, index) => {
+      item.addEventListener('mouseenter', () => {
+        // 獲取對應的扇區和圖標
+        const slice = svg.querySelectorAll('.pie-slice')[index];
+        const icon = document.querySelectorAll('.skill-icon')[index];
+        
+        // 高亮對應的扇區
+        slice.style.transform = "scale(1.05)";
+        slice.style.filter = "brightness(1.1)";
+        slice.style.zIndex = "5";
+        
+        // 高亮圖標
+        icon.style.transform = 'translate(-50%, -50%) scale(1.2)';
+        
+        // 更新中心內容
+        const skillName = skills[index].name;
+        const percentage = skills[index].percentage;
+        pieCenter.innerHTML = `
+          <h4>${skillName}</h4>
+          <p>${percentage}%</p>
+        `;
+      });
+      
+      item.addEventListener('mouseleave', () => {
+        // 獲取對應的扇區和圖標
+        const slice = svg.querySelectorAll('.pie-slice')[index];
+        const icon = document.querySelectorAll('.skill-icon')[index];
+        
+        // 移除高亮
+        slice.style.transform = "";
+        slice.style.filter = "";
+        slice.style.zIndex = "";
+        
+        // 恢復圖標
+        icon.style.transform = 'translate(-50%, -50%)';
+        
+        // 恢復中心內容
+        pieCenter.innerHTML = `
+          <h4>專業技能</h4>
+          <p>點擊查看詳情</p>
+        `;
+      });
+      
+      // 添加點擊事件
+      item.addEventListener('click', () => {
+        // 獲取對應的扇區和圖標
+        const slice = svg.querySelectorAll('.pie-slice')[index];
+        const icon = document.querySelectorAll('.skill-icon')[index];
+        
+        // 添加動畫效果
+        slice.style.transform = "scale(1.1)";
+        icon.style.transform = 'translate(-50%, -50%) scale(1.3)';
+        
+        setTimeout(() => {
+          slice.style.transform = "scale(1.05)";
+          icon.style.transform = 'translate(-50%, -50%) scale(1.2)';
+        }, 300);
+      });
+    });
+  });
+</script>
+
+</body>
+
+</html>
