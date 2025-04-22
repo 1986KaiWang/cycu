@@ -1,0 +1,368 @@
+/* 研究區塊 - 時尚化設計 */
+.research {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.research::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(106, 17, 203, 0.05), transparent 60%),
+              radial-gradient(circle at bottom left, rgba(37, 117, 252, 0.05), transparent 60%);
+  pointer-events: none;
+}
+
+/* 研究方向卡片 */
+.research-cards {
+  margin-top: 60px;
+  padding-top: 20px;
+}
+
+.research-card {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  overflow: visible; /* 改為 visible 讓圖標可以超出卡片邊界 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  transition: all 0.3s ease;
+  padding-top: 35px; /* 為圖標預留空間 */
+}
+
+.research-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.research-icon-container {
+  position: absolute;
+  top: -35px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.research-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.research-icon-wrapper i {
+  font-size: 28px;
+  color: #fff;
+}
+
+.blue-gradient {
+  background: linear-gradient(135deg, #4e73df, #2980b9);
+}
+
+.green-gradient {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.cyan-gradient {
+  background: linear-gradient(135deg, #00c9ff, #00b4d8);
+}
+
+.purple-gradient {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.research-content {
+  padding: 20px 25px 30px;
+  text-align: center;
+}
+
+.research-content h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.research-tags span {
+  display: inline-block;
+  padding: 5px 12px;
+  margin: 5px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.research-card:nth-child(1) .research-tags span {
+  background: rgba(78, 115, 223, 0.15);
+  color: #4e73df;
+}
+
+.research-card:nth-child(2) .research-tags span {
+  background: rgba(46, 204, 113, 0.15);
+  color: #27ae60;
+}
+
+.research-card:nth-child(3) .research-tags span {
+  background: rgba(0, 201, 255, 0.15);
+  color: #00b4d8;
+}
+
+/* 現代卡片設計 - 用於重點研究項目和研究設備 */
+.modern-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8));
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(37, 117, 252, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.modern-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+}
+
+.modern-card-header {
+  display: flex;
+  align-items: center;
+  padding: 25px 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.modern-card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  box-shadow: 0 8px 25px rgba(106, 17, 203, 0.3);
+}
+
+.modern-card-icon i {
+  font-size: 24px;
+  color: #fff;
+}
+
+.modern-card-header h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.modern-card-body {
+  padding: 30px;
+}
+
+/* 重點研究項目 - 手風琴樣式 */
+.research-accordion {
+  margin-top: 10px;
+}
+
+.research-accordion-item {
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.research-accordion-item:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.research-accordion-header {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.research-accordion-header:hover {
+  background: rgba(106, 17, 203, 0.05);
+}
+
+.research-accordion-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: #fff;
+  border-radius: 50%;
+  font-weight: 600;
+  margin-right: 15px;
+  flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(106, 17, 203, 0.2);
+}
+
+.research-accordion-header h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  flex-grow: 1;
+  color: #333;
+}
+
+.research-accordion-icon {
+  margin-left: 15px;
+}
+
+.research-accordion-icon i {
+  font-size: 18px;
+  color: #6a11cb;
+  transition: transform 0.3s ease;
+}
+
+.research-accordion-header[aria-expanded="true"] .research-accordion-icon i {
+  transform: rotate(180deg);
+}
+
+.research-accordion-content {
+  padding: 0 20px 20px 70px;
+  color: #555;
+}
+
+/* 研究設備與實驗室 */
+.equipment-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+  background: #fff;
+}
+
+.equipment-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(106, 17, 203, 0.15);
+}
+
+.equipment-image {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.equipment-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.equipment-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(106, 17, 203, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.equipment-overlay i {
+  color: #fff;
+  font-size: 24px;
+}
+
+.equipment-card:hover .equipment-image img {
+  transform: scale(1.1);
+}
+
+.equipment-card:hover .equipment-overlay {
+  opacity: 1;
+}
+
+.equipment-details {
+  padding: 20px;
+  background: #fff;
+}
+
+.equipment-details h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.equipment-details p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+  .research-cards {
+    margin-top: 40px;
+  }
+  
+  .research-card {
+    padding-top: 40px;
+  }
+  
+  .research-icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .research-icon-wrapper i {
+    font-size: 24px;
+  }
+  
+  .modern-card-header {
+    padding: 20px;
+  }
+  
+  .modern-card-body {
+    padding: 20px;
+  }
+  
+  .modern-card-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .modern-card-icon i {
+    font-size: 20px;
+  }
+  
+  .research-accordion-content {
+    padding: 0 15px 15px 60px;
+  }
+}
