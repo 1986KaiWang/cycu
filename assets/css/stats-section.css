@@ -1,0 +1,315 @@
+/* 時尚炫麗的 Stats Section 樣式 - 優化圖示顏色 */
+.stats-item {
+    position: relative;
+    padding: 30px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1;
+  }
+  
+  .stats-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+  
+  .stats-item:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    z-index: -1;
+  }
+  
+  /* 圖標容器樣式 - 新設計 */
+  .stats-icon-container {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.5s ease;
+    overflow: hidden;
+  }
+  
+  /* 圖標背景 - 取代光暈效果的新設計 */
+  .stats-icon-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 1;
+    transition: all 0.5s ease;
+    animation: rotate 8s linear infinite;
+  }
+  
+  /* 學術論文主題 - 粉紅色系 */
+  .academic-theme .stats-icon-background {
+    background: linear-gradient(135deg, #FF4088, #FF78AC);
+    box-shadow: 0 5px 15px rgba(255, 64, 136, 0.3);
+  }
+  
+  .academic-theme .stats-icon-container:before {
+    content: '';
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 1;
+  }
+  
+  /* 優化圖示顏色 - 使用漸變效果 */
+  .academic-theme i {
+    background: linear-gradient(135deg, #FFFFFF, #FFE1EC);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+    z-index: 3;
+  }
+  
+  .academic-theme .purecounter {
+    background: linear-gradient(135deg, #FF4088, #FF78AC);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* 研究計畫主題 - 青藍色系 */
+  .research-theme .stats-icon-background {
+    background: linear-gradient(135deg, #4ECCE6, #7CDEEE);
+    box-shadow: 0 5px 15px rgba(78, 204, 230, 0.3);
+  }
+  
+  .research-theme .stats-icon-container:before {
+    content: '';
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 1;
+  }
+  
+  /* 優化圖示顏色 */
+  .research-theme i {
+    background: linear-gradient(135deg, #FFFFFF, #E1F9FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+    z-index: 3;
+  }
+  
+  .research-theme .purecounter {
+    background: linear-gradient(135deg, #4ECCE6, #7CDEEE);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* 指導學生主題 - 紫色系 */
+  .student-theme .stats-icon-background {
+    background: linear-gradient(135deg, #8A4FFF, #B08BFF);
+    box-shadow: 0 5px 15px rgba(138, 79, 255, 0.3);
+  }
+  
+  .student-theme .stats-icon-container:before {
+    content: '';
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 1;
+  }
+  
+  /* 優化圖示顏色 */
+  .student-theme i {
+    background: linear-gradient(135deg, #FFFFFF, #EFE1FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+    z-index: 3;
+  }
+  
+  .student-theme .purecounter {
+    background: linear-gradient(135deg, #8A4FFF, #B08BFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* 合作機構主題 - 藍色系 */
+  .collab-theme .stats-icon-background {
+    background: linear-gradient(135deg, #4F7CFF, #85A2FF);
+    box-shadow: 0 5px 15px rgba(79, 124, 255, 0.3);
+  }
+  
+  .collab-theme .stats-icon-container:before {
+    content: '';
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 1;
+  }
+  
+  /* 優化圖示顏色 */
+  .collab-theme i {
+    background: linear-gradient(135deg, #FFFFFF, #E1EAFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+    z-index: 3;
+  }
+  
+  .collab-theme .purecounter {
+    background: linear-gradient(135deg, #4F7CFF, #85A2FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* 圖標樣式 */
+  .stats-item i {
+    position: relative;
+    font-size: 42px;
+    z-index: 2;
+    transition: all 0.5s ease;
+  }
+  
+  .stats-item:hover i {
+    transform: scale(1.2) rotate(5deg);
+  }
+  
+  /* 懸停效果 - 新設計 */
+  .stats-item:hover .stats-icon-background {
+    transform: scale(1.1);
+  }
+  
+  .stats-item:hover .stats-icon-container {
+    transform: rotate(5deg);
+  }
+  
+  /* 計數器樣式 */
+  .stats-item .purecounter {
+    position: relative;
+    font-size: 44px;
+    font-weight: 700;
+    margin: 15px 0 5px;
+    display: block;
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+  
+  .stats-item:hover .purecounter {
+    transform: scale(1.1);
+  }
+  
+  /* 文字樣式 */
+  .stats-item p {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+  }
+  
+  .stats-item p strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  .stats-item p span {
+    font-size: 14px;
+    color: #666;
+    transition: all 0.3s ease;
+  }
+  
+  .stats-item:hover p strong {
+    color: #222;
+  }
+  
+  .stats-item:hover p span {
+    color: #444;
+  }
+  
+  /* 動畫效果 */
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* 響應式調整 */
+  @media (max-width: 992px) {
+    .stats-icon-container {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .stats-icon-container:before {
+      width: 74px !important;
+      height: 74px !important;
+    }
+    
+    .stats-item i {
+      font-size: 36px;
+    }
+    
+    .stats-item .purecounter {
+      font-size: 38px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .stats-icon-container {
+      width: 70px;
+      height: 70px;
+    }
+    
+    .stats-icon-container:before {
+      width: 64px !important;
+      height: 64px !important;
+    }
+    
+    .stats-item i {
+      font-size: 32px;
+    }
+    
+    .stats-item .purecounter {
+      font-size: 34px;
+    }
+    
+    .stats-item p strong {
+      font-size: 16px;
+    }
+    
+    .stats-item p span {
+      font-size: 13px;
+    }
+  }
+  

@@ -1,0 +1,414 @@
+/* custom.css - 完整修正版 */
+:root {
+    --nav-mobile-background-color: linear-gradient(135deg, #03001C 0%, #301E67 40%, #5B8FB9 100%) !important;
+    --nav-dropdown-background-color: rgba(3, 0, 28, 0.9) !important; /* 深藍黑半透明 */
+    --nav-color: #D8B4FE !important; /* 淺紫色文字 */
+    --nav-hover-color: #ffffff !important; /* 白色懸停 */
+    --nav-gradient-1: #D8B4FE;
+    --nav-gradient-2: #A78BFA;
+    --nav-gradient-3: #8B5CF6;
+    --nav-gradient-4: #C4B5FD;
+    
+    /* 修改側邊欄漸變顏色 - 上淺下深順序 */
+    --sidebar-gradient-top: #5B8FB9;    /* 淺藍色 - 頂部 */
+    --sidebar-gradient-mid1: #4C3A80;   /* 中紫色 */
+    --sidebar-gradient-mid2: #301E67;   /* 深紫色 */
+    --sidebar-gradient-bottom: #03001C; /* 深藍黑 - 底部 */
+}
+
+.header {
+    background: var(--nav-mobile-background-color);
+    background-size: 200% 200%;
+}
+
+/* 側邊欄基本樣式 - 修正定位問題 */
+#header {
+    /* 使用明確的漸變方向和顏色順序 */
+    background: linear-gradient(to bottom, 
+                var(--sidebar-gradient-top) 0%,
+                var(--sidebar-gradient-mid1) 30%,
+                var(--sidebar-gradient-mid2) 70%,
+                var(--sidebar-gradient-bottom) 100%);
+    position: fixed; /* 改為固定定位 */
+    left: 0;
+    top: 0;
+    height: 100vh; /* 設置為視窗高度 */
+    width: 300px; /* 恢復為原始設計寬度 */
+    overflow: hidden;
+    z-index: 100; /* 確保在其他元素上方 */
+    
+    /* 添加底部陰影增強深色感 */
+    box-shadow: inset 0 -20px 30px -10px rgba(3, 0, 28, 0.5);
+}
+
+/* 確保主內容區域不被側邊欄覆蓋 */
+main, .main-content, #main {
+    margin-left: 300px; /* 與側邊欄寬度相同 */
+    width: calc(100% - 300px);
+}
+
+/* 強制添加動畫效果 - 使用獨立的偽元素 */
+#header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+                var(--sidebar-gradient-top) 0%,
+                var(--sidebar-gradient-mid1) 30%,
+                var(--sidebar-gradient-mid2) 70%,
+                var(--sidebar-gradient-bottom) 100%);
+    background-size: 400% 400%;
+    opacity: 1;
+    z-index: -1;
+    
+    /* 直接在偽元素上應用動畫 */
+    animation: sidebarAnimation 15s ease infinite;
+}
+
+/* 頂部光暈效果 */
+#header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to bottom, 
+                rgba(91, 143, 185, 0.3),
+                rgba(91, 143, 185, 0));
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 明確定義側邊欄動畫 */
+@keyframes sidebarAnimation {
+    0% {
+        background-position: 50% 0%;
+    }
+    50% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+/* 側邊欄光暈效果 */
+.sidebar-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    animation: sidebarGlow 10s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes sidebarGlow {
+    0% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 0.3; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.8); }
+}
+
+/* 確保側邊欄內容在動畫層上方 */
+#header .profile-img,
+#header .navmenu,
+#header .social-links,
+#header a,
+#header img,
+#header .bi {
+    position: relative;
+    z-index: 5;
+}
+
+/* 移除導航菜單項目下方的線條 */
+.navmenu a, 
+.navmenu a:focus,
+.navmenu a:hover,
+.navmenu .active,
+.navmenu .active:focus {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* 覆蓋原有的底部邊框樣式 */
+.navmenu a::after,
+.navmenu a:focus::after,
+.navmenu .active::after,
+.navmenu .active:focus::after {
+    display: none !important;
+}
+
+/* 設定下拉菜單背景色 */
+.navmenu .dropdown ul {
+    background-color: var(--nav-dropdown-background-color);
+    border: none !important; /* 移除可能的邊框 */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* 改進的霓虹燈文字效果 - 更清晰 */
+.navmenu a, 
+.navmenu a:focus {
+    position: relative;
+    color: var(--nav-color);
+    font-weight: 500;
+    background: linear-gradient(90deg, var(--nav-gradient-1), var(--nav-gradient-2), var(--nav-gradient-3), var(--nav-gradient-4));
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 8s ease infinite;
+    /* 使用更輕微的陰影，避免模糊效果 */
+    text-shadow: 
+        0 0 2px rgba(216, 180, 254, 0.3);
+    z-index: 1;
+}
+
+@keyframes gradientText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 移除模糊的文字副本，改用發光邊框 */
+.navmenu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-left: 2px solid transparent;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+/* 設定懸停和活動狀態的顏色 */
+.navmenu a:hover,
+.navmenu .active,
+.navmenu .active:focus {
+    background: var(--nav-hover-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: none;
+    /* 更清晰的發光效果 */
+    text-shadow: 
+        0 0 1px #fff,
+        0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+/* 懸停時的邊框發光效果，替代模糊文字 */
+.navmenu a:hover::after,
+.navmenu .active::after,
+.navmenu .active:focus::after {
+    opacity: 1;
+    border-left: 2px solid var(--nav-hover-color);
+    box-shadow: 
+        0 0 5px 1px rgba(255, 255, 255, 0.5),
+        0 0 8px 2px rgba(216, 180, 254, 0.3);
+}
+
+/* 確保下拉菜單項目也沒有下劃線 */
+.navmenu .dropdown a,
+.navmenu .dropdown a:focus,
+.navmenu .dropdown a:hover,
+.navmenu .dropdown .active,
+.navmenu .dropdown .active:focus {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* 移除可能的框線效果 */
+.navmenu a:focus,
+.navmenu a:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* 增強導航圖標顯示 - 更清晰 */
+.navmenu a .navicon,
+.navmenu a:focus .navicon {
+    background: linear-gradient(90deg, var(--nav-gradient-1), var(--nav-gradient-2), var(--nav-gradient-3), var(--nav-gradient-4));
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 8s ease infinite;
+    /* 使用 drop-shadow 而非模糊效果 */
+    filter: drop-shadow(0 0 2px rgba(216, 180, 254, 0.5));
+}
+
+.navmenu a:hover .navicon,
+.navmenu .active .navicon,
+.navmenu .active:focus .navicon {
+    background: var(--nav-hover-color);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: none;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
+}
+
+/* ===== 新增酷炫效果 ===== */
+
+/* 基本過渡效果設定 */
+.navmenu a {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding-left: 15px !important;
+    overflow: hidden;
+}
+
+/* 左側邊緣效果 */
+.navmenu a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(to bottom, transparent, var(--nav-hover-color), transparent);
+    transform: translateX(-5px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* 懸停和活動狀態的左側邊緣 */
+.navmenu a:hover::before,
+.navmenu .active::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 文字懸停效果 */
+.navmenu a:hover {
+    transform: translateX(8px);
+}
+
+/* 活動項目效果 */
+.navmenu .active {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* 動態圖標效果 */
+.navmenu a .navicon {
+    transition: all 0.4s ease;
+    transform-origin: center;
+}
+
+.navmenu a:hover .navicon {
+    transform: rotateY(180deg) scale(1.2);
+}
+
+.navmenu .active .navicon {
+    animation: iconPulse 2s infinite;
+}
+
+@keyframes iconPulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* 下拉菜單項目特殊效果 */
+.navmenu .dropdown ul a {
+    transition: all 0.3s ease;
+    border-left: 0px solid transparent;
+}
+
+.navmenu .dropdown ul a:hover {
+    border-left: 3px solid var(--nav-hover-color);
+    background-color: rgba(216, 180, 254, 0.1);
+    box-shadow: inset 0 0 15px rgba(216, 180, 254, 0.1);
+}
+
+/* 粒子效果樣式 */
+.navmenu a {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-particle {
+    position: absolute;
+    background: var(--nav-hover-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.8;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* 側邊欄背景星星效果 */
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    animation: twinkle var(--duration) ease-in-out infinite;
+    animation-delay: var(--delay);
+    z-index: 2;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: var(--opacity); transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.5); }
+}
+
+/* 滾動指示器樣式 */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--nav-gradient-1), var(--nav-gradient-2), var(--nav-gradient-3), var(--nav-gradient-4));
+    background-size: 200% 100%;
+    z-index: 9999;
+    width: 0%;
+    transition: width 0.2s ease;
+    box-shadow: 0 0 10px rgba(216, 180, 254, 0.5);
+    animation: gradientFlow 5s ease infinite;
+}
+
+/* 漸變動畫效果 */
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    #header {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    main, .main-content, #main {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    /* 移動版導航樣式調整 */
+    .mobile-nav-toggle {
+        display: block;
+        position: fixed;
+        right: 15px;
+        top: 15px;
+        z-index: 9998;
+    }
+}
