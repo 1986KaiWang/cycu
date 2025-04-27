@@ -532,14 +532,14 @@ body.mobile-nav-active .mobile-nav-overlay {
 }
 
 /* 隱藏側邊欄中的額外漢堡圖標 */
-#header .mobile-nav-toggle,
+/*#header .mobile-nav-toggle,
 #header .bi-list,
 #header [class*="mobile-nav"] {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
-}
+}*/
 
 /* 確保側邊欄內不會有重複的漢堡按鈕 */
 /*#header button,
