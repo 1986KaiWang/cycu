@@ -498,7 +498,7 @@ function checkMobileNavState() {
 }
 // ===== 側邊欄優化代碼 - 開始 =====
 // 確保側邊欄內沒有漢堡圖標
-function removeExtraHamburgerIcons() {
+/*function removeExtraHamburgerIcons() {
     // 選擇側邊欄元素
     const sidebar = document.getElementById('header');
     if (!sidebar) return;
@@ -545,5 +545,5 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 監聽視窗大小變化
     window.addEventListener('resize', removeExtraHamburgerIcons);
-});
+});*/
 // ===== 側邊欄優化代碼 - 結束 =====
