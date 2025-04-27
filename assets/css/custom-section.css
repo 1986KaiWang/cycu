@@ -519,3 +519,7 @@ body.mobile-nav-active .mobile-nav-overlay {
     display: block;
     opacity: 1;
 }
+/* 在 custom.css 中只添加這一行 */
+#header {
+    overflow-y: hidden !important;
+}
