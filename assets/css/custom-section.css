@@ -542,12 +542,12 @@ body.mobile-nav-active .mobile-nav-overlay {
 }
 
 /* 確保側邊欄內不會有重複的漢堡按鈕 */
-#header button,
+/*#header button,
 #header .toggle-button,
 #header .navbar-toggler {
     display: none !important;
     visibility: hidden !important;
-}
+}*/
 
 /* 強制隱藏側邊欄內可能的漢堡圖標 */
 #header .bi-list,
