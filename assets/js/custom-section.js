@@ -1,12 +1,9 @@
-// custom-section.js - 完整修改版
+// custom-section.js - 完整修正版
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM fully loaded");
     
     // 確保頁面載入時側邊欄隱藏（手機版）
     initializeSidebar();
-    
-    // 確保主內容區域可見
-    ensureMainContentVisible();
     
     // 添加滾動指示器
     addScrollIndicator();
@@ -141,557 +138,371 @@ document.addEventListener('DOMContentLoaded', function() {
         const left = Math.random() * 100;
         const top = Math.random() * 100;
         
-               // 隨機動畫持續時間和延遲
-               const duration = Math.random() * 3 + 2;
-               const delay = Math.random() * 5;
-               
-               // 隨機不透明度
-               const opacity = Math.random() * 0.5 + 0.3;
-               
-               // 設置星星樣式
-               star.style.width = `${size}px`;
-               star.style.height = `${size}px`;
-               star.style.left = `${left}%`;
-               star.style.top = `${top}%`;
-               star.style.setProperty('--duration', `${duration}s`);
-               star.style.setProperty('--delay', `${delay}s`);
-               star.style.setProperty('--opacity', opacity);
-               
-               // 添加到容器
-               container.appendChild(star);
-           }
-           
-           /**
-            * 創建並添加滾動指示器
-            */
-           function addScrollIndicator() {
-               // 檢查是否已存在
-               if (document.querySelector('.scroll-indicator')) return;
-               
-               // 創建滾動指示器元素
-               const scrollIndicator = document.createElement('div');
-               scrollIndicator.className = 'scroll-indicator';
-               
-               // 添加到頁面頂部
-               document.body.appendChild(scrollIndicator);
-               
-               // 監聽滾動事件，更新指示器寬度
-               window.addEventListener('scroll', updateScrollIndicator);
-               
-               // 初始更新
-               updateScrollIndicator();
-           }
-       
-           /**
-            * 更新滾動指示器的寬度
-            */
-           function updateScrollIndicator() {
-               const scrollIndicator = document.querySelector('.scroll-indicator');
-               if (!scrollIndicator) return;
-               
-               // 計算滾動百分比
-               const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-               const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-               const scrolled = (winScroll / height) * 100;
-               
-               // 更新指示器寬度
-               scrollIndicator.style.width = scrolled + '%';
-           }
-           
-           // 添加側邊欄切換按鈕
-           addMobileNavToggle();
-           
-           // 添加遮罩層
-           addMobileNavOverlay();
-           
-           // 設置移動端導航功能
-           setupMobileNav();
-           
-           // 初始化時檢查並設置側邊欄狀態
-           checkMobileNavState();
-           
-           // 監聽窗口大小變化，調整側邊欄位置和狀態
-           window.addEventListener('resize', function() {
-               checkMobileNavState();
-               ensureMainContentVisible(); // 確保主內容區域在調整大小後仍然可見
-           });
-       });
-       
-       /**
-        * 確保主內容區域可見
-        */
-       function ensureMainContentVisible() {
-           console.log("Ensuring main content is visible");
-           
-           // 選擇所有可能的主內容容器
-           const mainElements = [
-               document.querySelector('main'),
-               document.querySelector('#main'),
-               document.querySelector('.main-content'),
-               document.querySelector('#hero'),
-               document.querySelector('.container'),
-               document.querySelector('.section-title'),
-               document.querySelector('.row')
-           ];
-           
-           // 獲取所有直接子元素（可能是主內容區域）
-           const bodyChildren = Array.from(document.body.children).filter(el => {
-               // 排除側邊欄、按鈕、遮罩和腳本元素
-               return el.id !== 'header' && 
-                      !el.classList.contains('mobile-nav-toggle') && 
-                      !el.classList.contains('mobile-nav-overlay') &&
-                      el.tagName !== 'SCRIPT' &&
-                      el.tagName !== 'STYLE';
-           });
-           
-           // 設置主內容區域的可見性
-           mainElements.forEach(el => {
-               if (el) {
-                   el.style.visibility = 'visible';
-                   el.style.opacity = '1';
-                   
-                   if (window.innerWidth >= 1200) {
-                       el.style.marginLeft = '300px';
-                       el.style.width = 'calc(100% - 300px)';
-                       el.style.maxWidth = 'calc(100% - 300px)';
-                   } else {
-                       el.style.marginLeft = '0';
-                       el.style.width = '100%';
-                       el.style.maxWidth = '100%';
-                   }
-               }
-           });
-           
-           // 處理所有可能的主內容容器
-           bodyChildren.forEach(el => {
-               el.style.visibility = 'visible';
-               el.style.opacity = '1';
-               
-               if (window.innerWidth >= 1200) {
-                   el.style.marginLeft = '300px';
-                   el.style.width = 'calc(100% - 300px)';
-                   el.style.maxWidth = 'calc(100% - 300px)';
-               } else {
-                   el.style.marginLeft = '0';
-                   el.style.width = '100%';
-                   el.style.maxWidth = '100%';
-               }
-           });
-           
-           // 確保隱藏的元素可見
-           document.querySelectorAll('.hidden, .d-none').forEach(el => {
-               el.style.display = 'block';
-               el.style.visibility = 'visible';
-               el.style.opacity = '1';
-           });
-       }
-       
-       /**
-        * 初始化側邊欄狀態 - 修正版
-        */
-       function initializeSidebar() {
-           console.log("Initializing sidebar");
-           
-           const isMobile = window.innerWidth <= 1199;
-           const header = document.getElementById('header');
-           
-           if (isMobile && header) {
-               // 確保手機版載入時側邊欄隱藏
-               header.style.left = '-100%'; // 使用百分比確保完全隱藏
-               
-               // 設置適當的寬度
-               const screenWidth = window.innerWidth;
-               const sidebarWidth = Math.min(screenWidth * 0.8, 300); // 80%的螢幕寬度，最大300px
-               header.style.width = sidebarWidth + 'px';
-               
-               // 手機版設置為可滾動
-               header.style.overflowY = 'auto';
-               
-               document.body.classList.remove('mobile-nav-active');
-           } else if (header) {
-               // 桌面版顯示側邊欄
-               header.style.left = '0';
-               header.style.width = '300px';
-               
-               // 桌面版設置為不可滾動
-               header.style.overflowY = 'hidden';
-               
-               // 調整主內容區域
-               const mainContent = document.querySelector('main') || document.querySelector('#main') || document.querySelector('.main-content');
-               if (mainContent) {
-                   mainContent.style.marginLeft = '300px';
-                   mainContent.style.width = 'calc(100% - 300px)';
-               }
-           }
-           
-           // 確保 html 和 body 元素設置了適當的高度
-           document.documentElement.style.height = '100%';
-           document.body.style.height = '100%';
-       }
-       
-       /**
-        * 添加移動端導航切換按鈕
-        */
-       function addMobileNavToggle() {
-           // 檢查是否已存在切換按鈕
-           if (document.querySelector('.mobile-nav-toggle')) return;
-           
-           console.log("Adding mobile nav toggle button");
-           
-           // 創建切換按鈕
-           const toggleButton = document.createElement('button');
-           toggleButton.className = 'mobile-nav-toggle';
-           toggleButton.setAttribute('aria-label', '切換側邊欄');
-           
-           // 添加圖標
-           const icon = document.createElement('i');
-           icon.className = 'bi bi-list';
-           toggleButton.appendChild(icon);
-           
-           // 添加到頁面
-           document.body.appendChild(toggleButton);
-           
-           // 確保按鈕可點擊
-           toggleButton.addEventListener('click', function(e) {
-               console.log("Toggle button clicked");
-               e.preventDefault();
-               toggleMobileNav();
-           });
-       }
-       
-       /**
-        * 添加遮罩層
-        */
-       function addMobileNavOverlay() {
-           // 檢查是否已存在遮罩層
-           if (document.querySelector('.mobile-nav-overlay')) return;
-           
-           console.log("Adding mobile nav overlay");
-           
-           // 創建遮罩層
-           const overlay = document.createElement('div');
-           overlay.className = 'mobile-nav-overlay';
-           
-           // 添加到頁面
-           document.body.appendChild(overlay);
-           
-           // 點擊遮罩層關閉側邊欄
-           overlay.addEventListener('click', function() {
-               console.log("Overlay clicked");
-               toggleMobileNav(false); // 強制關閉側邊欄
-           });
-       }
-       
-       /**
-        * 切換移動端導航 - 修正版
-        * @param {boolean|undefined} forceState - 強制設置狀態，true 為打開，false 為關閉，undefined 為切換
-        */
-       function toggleMobileNav(forceState) {
-           console.log("Toggling mobile nav, force state:", forceState);
-           
-           const header = document.getElementById('header');
-           if (!header) {
-               console.error("Header element not found");
-               return;
-           }
-           
-           // 獲取當前狀態
-           const isActive = document.body.classList.contains('mobile-nav-active');
-           
-           // 決定新狀態
-           const newState = forceState !== undefined ? forceState : !isActive;
-           
-           console.log("Current state:", isActive, "New state:", newState);
-           
-           if (newState) {
-               // 打開側邊欄
-               document.body.classList.add('mobile-nav-active');
-               
-               // 確保側邊欄完全顯示在螢幕上
-               const screenWidth = window.innerWidth;
-               const sidebarWidth = Math.min(screenWidth * 0.8, 300); // 80%的螢幕寬度，最大300px
-               
-               header.style.left = '0';
-               header.style.width = sidebarWidth + 'px';
-               
-               // 手機版設置為可滾動
-               if (window.innerWidth <= 1199) {
-                   header.style.overflowY = 'auto';
-               }
-               
-               // 更新按鈕圖標
-               const icon = document.querySelector('.mobile-nav-toggle i');
-               if (icon) {
-                   icon.classList.remove('bi-list');
-                   icon.classList.add('bi-x');
-               }
-               
-               // 顯示遮罩層
-               const overlay = document.querySelector('.mobile-nav-overlay');
-               if (overlay) {
-                   overlay.style.display = 'block';
-                   // 使用 setTimeout 確保過渡效果生效
-                   setTimeout(() => {
-                       overlay.style.opacity = '1';
-                   }, 10);
-               }
-           } else {
-               // 關閉側邊欄
-               document.body.classList.remove('mobile-nav-active');
-               header.style.left = '-100%'; // 使用百分比確保完全隱藏
-               
-               // 更新按鈕圖標
-               const icon = document.querySelector('.mobile-nav-toggle i');
-               if (icon) {
-                   icon.classList.remove('bi-x');
-                   icon.classList.add('bi-list');
-               }
-               
-               // 隱藏遮罩層
-               const overlay = document.querySelector('.mobile-nav-overlay');
-               if (overlay) {
-                   overlay.style.opacity = '0';
-                   // 使用 setTimeout 確保過渡效果完成後再隱藏
-                   setTimeout(() => {
-                       overlay.style.display = 'none';
-                   }, 300);
-               }
-           }
-       }
-       
-       /**
-        * 設置移動端導航功能
-        */
-       function setupMobileNav() {
-           console.log("Setting up mobile nav");
-           
-           // 獲取切換按鈕
-           const toggleButton = document.querySelector('.mobile-nav-toggle');
-           if (!toggleButton) {
-               console.warn('側邊欄切換按鈕未找到');
-               return;
-           }
-           
-           // 確保按鈕可點擊 - 添加多個事件處理器以確保點擊被捕獲
-           toggleButton.onclick = function(e) {
-               console.log("Toggle button onclick triggered");
-               e.preventDefault();
-               e.stopPropagation();
-               toggleMobileNav();
-           };
-           
-           // 添加額外的點擊事件處理器
-           toggleButton.addEventListener('click', function(e) {
-               console.log("Toggle button click event triggered");
-               e.preventDefault();
-               e.stopPropagation();
-               toggleMobileNav();
-           }, true); // 使用捕獲階段
-           
-           // 點擊導航菜單項時自動關閉側邊欄（僅在移動端）
-           const navLinks = document.querySelectorAll('#header .navmenu a, #header .nav-link');
-           navLinks.forEach(link => {
-               link.addEventListener('click', function(e) {
-                   console.log("Nav link clicked");
-                   if (window.innerWidth <= 1199) {
-                       // 允許默認行為發生後再關閉側邊欄
-                       setTimeout(() => {
-                           toggleMobileNav(false);
-                       }, 100);
-                   }
-               });
-           });
-           
-           // 點擊頁面主內容區域時關閉側邊欄
-           const mainContent = document.querySelector('main') || document.querySelector('#main');
-           if (mainContent) {
-               mainContent.addEventListener('click', function() {
-                   console.log("Main content clicked");
-                   if (window.innerWidth <= 1199 && document.body.classList.contains('mobile-nav-active')) {
-                       toggleMobileNav(false);
-                   }
-               });
-           }
-       }
-       
-       /**
-        * 檢查並設置移動端導航狀態 - 完整修正版
-        */
-       function checkMobileNavState() {
-           console.log("Checking mobile nav state");
-           
-           const isMobile = window.innerWidth <= 1199;
-           const header = document.getElementById('header');
-           
-           if (!header) {
-               console.error("Header element not found");
-               return;
-           }
-           
-           // 獲取所有可能的主內容容器
-           const mainContainers = [
-               document.querySelector('main'),
-               document.querySelector('#main'),
-               document.querySelector('.main-content'),
-               document.querySelector('#hero'),
-               document.querySelector('.container'),
-               document.querySelector('.section-title'),
-               document.querySelector('.row')
-           ];
-           
-           // 獲取所有直接子元素（可能是主內容區域）
-           const bodyChildren = Array.from(document.body.children).filter(el => {
-               // 排除側邊欄、按鈕、遮罩和腳本元素
-               return el.id !== 'header' && 
-                      !el.classList.contains('mobile-nav-toggle') && 
-                      !el.classList.contains('mobile-nav-overlay') &&
-                      el.tagName !== 'SCRIPT' &&
-                      el.tagName !== 'STYLE';
-           });
-           
-           if (isMobile) {
-               console.log("Mobile view detected");
-               
-               // 確保切換按鈕可見
-               const toggleButton = document.querySelector('.mobile-nav-toggle');
-               if (toggleButton) {
-                   toggleButton.style.display = 'flex';
-               }
-               
-               // 設置適當的寬度
-               const screenWidth = window.innerWidth;
-               const sidebarWidth = Math.min(screenWidth * 0.8, 300); // 80%的螢幕寬度，最大300px
-               header.style.width = sidebarWidth + 'px';
-               
-               // 手機版設置為可滾動
-               header.style.overflowY = 'auto';
-               
-               // 如果側邊欄未激活，確保它是隱藏的
-               if (!document.body.classList.contains('mobile-nav-active')) {
-                   header.style.left = '-100%'; // 使用百分比確保完全隱藏
-               } else {
-                   header.style.left = '0';
-               }
-               
-               // 重置所有主內容區域
-               mainContainers.forEach(container => {
-                   if (container) {
-                       container.style.marginLeft = '0';
-                       container.style.width = '100%';
-                       container.style.maxWidth = '100%';
-                   }
-               });
-               
-               // 處理所有可能的主內容容器
-               bodyChildren.forEach(el => {
-                   el.style.marginLeft = '0';
-                   el.style.width = '100%';
-                   el.style.maxWidth = '100%';
-                   el.style.visibility = 'visible';
-                   el.style.opacity = '1';
-                   el.style.display = el.tagName === 'DIV' || el.tagName === 'SECTION' ? 'block' : '';
-               });
-           } else {
-               console.log("Desktop view detected");
-               
-               // 桌面版隱藏切換按鈕
-               const toggleButton = document.querySelector('.mobile-nav-toggle');
-               if (toggleButton) {
-                   toggleButton.style.display = 'none';
-               }
-               
-               // 桌面版始終顯示側邊欄
-               header.style.left = '0';
-               header.style.width = '300px';
-               
-               // 桌面版設置為不可滾動
-               header.style.overflowY = 'hidden';
-               
-               document.body.classList.remove('mobile-nav-active');
-               
-               // 調整所有主內容區域
-               mainContainers.forEach(container => {
-                   if (container) {
-                       container.style.marginLeft = '300px';
-                       container.style.width = 'calc(100% - 300px)';
-                       container.style.maxWidth = 'calc(100% - 300px)';
-                   }
-               });
-               
-               // 處理所有可能的主內容容器
-               bodyChildren.forEach(el => {
-                   el.style.marginLeft = '300px';
-                   el.style.width = 'calc(100% - 300px)';
-                   el.style.maxWidth = 'calc(100% - 300px)';
-                   el.style.visibility = 'visible';
-                   el.style.opacity = '1';
-                   el.style.display = el.tagName === 'DIV' || el.tagName === 'SECTION' ? 'block' : '';
-               });
-               
-               // 隱藏遮罩層
-               const overlay = document.querySelector('.mobile-nav-overlay');
-               if (overlay) {
-                   overlay.style.display = 'none';
-                   overlay.style.opacity = '0';
-               }
-           }
-           
-           // 確保內容可見
-           document.querySelectorAll('.hidden, .d-none').forEach(el => {
-               el.style.display = 'block';
-               el.style.visibility = 'visible';
-               el.style.opacity = '1';
-           });
-       }
-       
-       // 添加頁面載入完成後的修復腳本
-       window.addEventListener('load', function() {
-           console.log("Window fully loaded - applying final fixes");
-           
-           // 確保主內容區域可見
-           ensureMainContentVisible();
-           
-           // 添加直接修復腳本
-           applyDirectFixes();
-       });
-       
-       /**
-        * 應用直接修復
-        */
-       function applyDirectFixes() {
-           console.log("Applying direct fixes");
-           
-           // 強制修復主內容區域顯示
-           if (window.innerWidth >= 1200) {
-               // 選擇所有主要容器
-               const allContainers = document.querySelectorAll('main, #main, .main-content, #hero, .container, .section-title, .row');
-               
-               allContainers.forEach(container => {
-                   if (container) {
-                       container.style.marginLeft = '300px';
-                       container.style.width = 'calc(100% - 300px)';
-                       container.style.maxWidth = 'calc(100% - 300px)';
-                       container.style.visibility = 'visible';
-                       container.style.opacity = '1';
-                       container.style.display = 'block';
-                   }
-               });
-               
-               // 處理所有直接子元素
-               Array.from(document.body.children).forEach(el => {
-                   if (el.id !== 'header' && 
-                       !el.classList.contains('mobile-nav-toggle') && 
-                       !el.classList.contains('mobile-nav-overlay') &&
-                       el.tagName !== 'SCRIPT' &&
-                       el.tagName !== 'STYLE') {
-                       
-                       el.style.marginLeft = '300px';
-                       el.style.width = 'calc(100% - 300px)';
-                       el.style.maxWidth = 'calc(100% - 300px)';
-                       el.style.visibility = 'visible';
-                       el.style.opacity = '1';
-                   }
-               });
-           }
-       }
-       
+        // 隨機動畫持續時間和延遲
+        const duration = Math.random() * 3 + 2;
+        const delay = Math.random() * 5;
+        
+        // 隨機不透明度
+        const opacity = Math.random() * 0.5 + 0.3;
+        
+        // 設置星星樣式
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${left}%`;
+        star.style.top = `${top}%`;
+        star.style.setProperty('--duration', `${duration}s`);
+        star.style.setProperty('--delay', `${delay}s`);
+        star.style.setProperty('--opacity', opacity);
+        
+        // 添加到容器
+        container.appendChild(star);
+    }
+    
+    /**
+     * 創建並添加滾動指示器
+     */
+    function addScrollIndicator() {
+        // 檢查是否已存在
+        if (document.querySelector('.scroll-indicator')) return;
+        
+        // 創建滾動指示器元素
+        const scrollIndicator = document.createElement('div');
+        scrollIndicator.className = 'scroll-indicator';
+        
+        // 添加到頁面頂部
+        document.body.appendChild(scrollIndicator);
+        
+        // 監聽滾動事件，更新指示器寬度
+        window.addEventListener('scroll', updateScrollIndicator);
+        
+        // 初始更新
+        updateScrollIndicator();
+    }
+
+    /**
+     * 更新滾動指示器的寬度
+     */
+    function updateScrollIndicator() {
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        if (!scrollIndicator) return;
+        
+        // 計算滾動百分比
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        
+        // 更新指示器寬度
+        scrollIndicator.style.width = scrolled + '%';
+    }
+    
+    // 添加側邊欄切換按鈕
+    addMobileNavToggle();
+    
+    // 添加遮罩層
+    addMobileNavOverlay();
+    
+    // 設置移動端導航功能
+    setupMobileNav();
+    
+    // 初始化時檢查並設置側邊欄狀態
+    checkMobileNavState();
+    
+    // 監聽窗口大小變化，調整側邊欄位置和狀態
+    window.addEventListener('resize', function() {
+        checkMobileNavState();
+    });
+});
+
+/**
+ * 初始化側邊欄狀態 - 修正版
+ */
+function initializeSidebar() {
+    console.log("Initializing sidebar");
+    
+    const isMobile = window.innerWidth <= 1199;
+    const header = document.getElementById('header');
+    
+    if (isMobile && header) {
+        // 確保手機版載入時側邊欄隱藏
+        header.style.left = '-100%'; // 使用百分比確保完全隱藏
+        
+        // 設置適當的寬度
+        const screenWidth = window.innerWidth;
+        const sidebarWidth = Math.min(screenWidth * 0.8, 300); // 80%的螢幕寬度，最大300px
+        header.style.width = sidebarWidth + 'px';
+        
+        document.body.classList.remove('mobile-nav-active');
+    } else if (header) {
+        // 桌面版顯示側邊欄
+        header.style.left = '0';
+        header.style.width = '300px';
+        
+        // 調整主內容區域
+        const mainContent = document.querySelector('main') || document.querySelector('#main') || document.querySelector('.main-content');
+        if (mainContent) {
+            mainContent.style.marginLeft = '300px';
+            mainContent.style.width = 'calc(100% - 300px)';
+        }
+    }
+}
+
+/**
+ * 添加移動端導航切換按鈕
+ */
+function addMobileNavToggle() {
+    // 檢查是否已存在切換按鈕
+    if (document.querySelector('.mobile-nav-toggle')) return;
+    
+    console.log("Adding mobile nav toggle button");
+    
+    // 創建切換按鈕
+    const toggleButton = document.createElement('button');
+    toggleButton.className = 'mobile-nav-toggle';
+    toggleButton.setAttribute('aria-label', '切換側邊欄');
+    
+    // 添加圖標
+    const icon = document.createElement('i');
+    icon.className = 'bi bi-list';
+    toggleButton.appendChild(icon);
+    
+    // 添加到頁面
+    document.body.appendChild(toggleButton);
+    
+    // 確保按鈕可點擊
+    toggleButton.addEventListener('click', function(e) {
+        console.log("Toggle button clicked");
+        e.preventDefault();
+        toggleMobileNav();
+    });
+}
+
+/**
+ * 添加遮罩層
+ */
+function addMobileNavOverlay() {
+    // 檢查是否已存在遮罩層
+    if (document.querySelector('.mobile-nav-overlay')) return;
+    
+    console.log("Adding mobile nav overlay");
+    
+    // 創建遮罩層
+    const overlay = document.createElement('div');
+    overlay.className = 'mobile-nav-overlay';
+    
+    // 添加到頁面
+    document.body.appendChild(overlay);
+    
+    // 點擊遮罩層關閉側邊欄
+    overlay.addEventListener('click', function() {
+        console.log("Overlay clicked");
+        toggleMobileNav(false); // 強制關閉側邊欄
+    });
+}
+
+/**
+ * 切換移動端導航 - 修正版
+ * @param {boolean|undefined} forceState - 強制設置狀態，true 為打開，false 為關閉，undefined 為切換
+ */
+function toggleMobileNav(forceState) {
+    console.log("Toggling mobile nav, force state:", forceState);
+    
+    const header = document.getElementById('header');
+    if (!header) {
+        console.error("Header element not found");
+        return;
+    }
+    
+    // 獲取當前狀態
+    const isActive = document.body.classList.contains('mobile-nav-active');
+    
+    // 決定新狀態
+    const newState = forceState !== undefined ? forceState : !isActive;
+    
+    console.log("Current state:", isActive, "New state:", newState);
+    
+    if (newState) {
+        // 打開側邊欄
+        document.body.classList.add('mobile-nav-active');
+        
+        // 確保側邊欄完全顯示在螢幕上
+        const screenWidth = window.innerWidth;
+        const sidebarWidth = Math.min(screenWidth * 0.8, 300); // 80%的螢幕寬度，最大300px
+        
+        header.style.left = '0';
+        header.style.width = sidebarWidth + 'px';
+        
+        // 更新按鈕圖標
+        const icon = document.querySelector('.mobile-nav-toggle i');
+        if (icon) {
+            icon.classList.remove('bi-list');
+            icon.classList.add('bi-x');
+        }
+        
+        // 顯示遮罩層
+        const overlay = document.querySelector('.mobile-nav-overlay');
+        if (overlay) {
+            overlay.style.display = 'block';
+            // 使用 setTimeout 確保過渡效果生效
+            setTimeout(() => {
+                overlay.style.opacity = '1';
+            }, 10);
+        }
+    } else {
+        // 關閉側邊欄
+        document.body.classList.remove('mobile-nav-active');
+        header.style.left = '-100%'; // 使用百分比確保完全隱藏
+        
+        // 更新按鈕圖標
+        const icon = document.querySelector('.mobile-nav-toggle i');
+        if (icon) {
+            icon.classList.remove('bi-x');
+            icon.classList.add('bi-list');
+        }
+        
+        // 隱藏遮罩層
+        const overlay = document.querySelector('.mobile-nav-overlay');
+        if (overlay) {
+            overlay.style.opacity = '0';
+            // 使用 setTimeout 確保過渡效果完成後再隱藏
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 300);
+        }
+    }
+}
+
+/**
+ * 設置移動端導航功能
+ */
+function setupMobileNav() {
+    console.log("Setting up mobile nav");
+    
+    // 獲取切換按鈕
+    const toggleButton = document.querySelector('.mobile-nav-toggle');
+    if (!toggleButton) {
+        console.warn('側邊欄切換按鈕未找到');
+        return;
+    }
+    
+    // 確保按鈕可點擊 - 添加多個事件處理器以確保點擊被捕獲
+    toggleButton.onclick = function(e) {
+        console.log("Toggle button onclick triggered");
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMobileNav();
+    };
+    
+    // 添加額外的點擊事件處理器
+    toggleButton.addEventListener('click', function(e) {
+        console.log("Toggle button click event triggered");
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMobileNav();
+    }, true); // 使用捕獲階段
+    
+    // 點擊導航菜單項時自動關閉側邊欄（僅在移動端）
+    const navLinks = document.querySelectorAll('#header .navmenu a, #header .nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            console.log("Nav link clicked");
+            if (window.innerWidth <= 1199) {
+                // 允許默認行為發生後再關閉側邊欄
+                setTimeout(() => {
+                    toggleMobileNav(false);
+                }, 100);
+            }
+        });
+    });
+    
+    // 點擊頁面主內容區域時關閉側邊欄
+    const mainContent = document.querySelector('main') || document.querySelector('#main');
+    if (mainContent) {
+        mainContent.addEventListener('click', function() {
+            console.log("Main content clicked");
+            if (window.innerWidth <= 1199 && document.body.classList.contains('mobile-nav-active')) {
+                toggleMobileNav(false);
+            }
+        });
+    }
+}
+
+/**
+ * 檢查並設置移動端導航狀態 - 修正版
+ */
+function checkMobileNavState() {
+    console.log("Checking mobile nav state");
+    
+    const isMobile = window.innerWidth <= 1199;
+    const header = document.getElementById('header');
+    
+    if (!header) {
+        console.error("Header element not found");
+        return;
+    }
+    
+    if (isMobile) {
+        console.log("Mobile view detected");
+        
+        // 確保切換按鈕可見
+        const toggleButton = document.querySelector('.mobile-nav-toggle');
+        if (toggleButton) {
+            toggleButton.style.display = 'flex';
+        }
+        
+        // 設置適當的寬度
+        const screenWidth = window.innerWidth;
+        const sidebarWidth = Math.min(screenWidth * 0.8, 300); // 80%的螢幕寬度，最大300px
+        header.style.width = sidebarWidth + 'px';
+        
+        // 如果側邊欄未激活，確保它是隱藏的
+        if (!document.body.classList.contains('mobile-nav-active')) {
+            header.style.left = '-100%'; // 使用百分比確保完全隱藏
+        } else {
+            header.style.left = '0';
+        }
+        
+        // 重置主內容區域
+        const mainContent = document.querySelector('main') || document.querySelector('#main') || document.querySelector('.main-content');
+        if (mainContent) {
+            mainContent.style.marginLeft = '0';
+            mainContent.style.width = '100%';
+        }
+    } else {
+        console.log("Desktop view detected");
+        
+        // 桌面版隱藏切換按鈕
+        const toggleButton = document.querySelector('.mobile-nav-toggle');
+        if (toggleButton) {
+            toggleButton.style.display = 'none';
+        }
+        
+        // 桌面版始終顯示側邊欄
+        header.style.left = '0';
+        header.style.width = '300px';
+        document.body.classList.remove('mobile-nav-active');
+        
+        // 調整主內容區域
+        const mainContent = document.querySelector('main') || document.querySelector('#main') || document.querySelector('.main-content');
+        if (mainContent) {
+            mainContent.style.marginLeft = '300px';
+            mainContent.style.width = 'calc(100% - 300px)';
+        }
+        
+        // 隱藏遮罩層
+        const overlay = document.querySelector('.mobile-nav-overlay');
+        if (overlay) {
+            overlay.style.display = 'none';
+            overlay.style.opacity = '0';
+        }
+    }
+}
+// 在 custom-section.js 中添加這幾行
+document.addEventListener('DOMContentLoaded', function() {
+    // 其他代碼...
+    
+    // 確保側邊欄不可滾動
+    const header = document.getElementById('header');
+    if (header) {
+        header.style.overflowY = 'hidden';
+    }
+});
