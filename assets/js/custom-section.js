@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /**
- * 初始化側邊欄狀態
+ * 初始化側邊欄狀態 - 修正版
  */
 function initializeSidebar() {
     console.log("Initializing sidebar");
@@ -224,11 +224,18 @@ function initializeSidebar() {
     
     if (isMobile && header) {
         // 確保手機版載入時側邊欄隱藏
-        header.style.left = '-300px';
+        header.style.left = '-100%'; // 使用百分比確保完全隱藏
+        
+        // 設置適當的寬度
+        const screenWidth = window.innerWidth;
+        const sidebarWidth = Math.min(screenWidth * 0.8, 300); // 80%的螢幕寬度，最大300px
+        header.style.width = sidebarWidth + 'px';
+        
         document.body.classList.remove('mobile-nav-active');
     } else if (header) {
         // 桌面版顯示側邊欄
         header.style.left = '0';
+        header.style.width = '300px';
         
         // 調整主內容區域
         const mainContent = document.querySelector('main') || document.querySelector('#main') || document.querySelector('.main-content');
@@ -251,10 +258,14 @@ function addMobileNavToggle() {
     // 創建切換按鈕
     const toggleButton = document.createElement('button');
     toggleButton.className = 'mobile-nav-toggle';
-    toggleButton.innerHTML = '<i class="bi bi-list"></i>';
-    toggleButton.setAttribute('aria-label', '切換導航菜單');
+    toggleButton.setAttribute('aria-label', '切換側邊欄');
     
-        // 添加到頁面
+    // 添加圖標
+    const icon = document.createElement('i');
+    icon.className = 'bi bi-list';
+    toggleButton.appendChild(icon);
+    
+    // 添加到頁面
     document.body.appendChild(toggleButton);
     
     // 確保按鈕可點擊
@@ -289,7 +300,7 @@ function addMobileNavOverlay() {
 }
 
 /**
- * 切換移動端導航
+ * 切換移動端導航 - 修正版
  * @param {boolean|undefined} forceState - 強制設置狀態，true 為打開，false 為關閉，undefined 為切換
  */
 function toggleMobileNav(forceState) {
@@ -312,7 +323,13 @@ function toggleMobileNav(forceState) {
     if (newState) {
         // 打開側邊欄
         document.body.classList.add('mobile-nav-active');
+        
+        // 確保側邊欄完全顯示在螢幕上
+        const screenWidth = window.innerWidth;
+        const sidebarWidth = Math.min(screenWidth * 0.8, 300); // 80%的螢幕寬度，最大300px
+        
         header.style.left = '0';
+        header.style.width = sidebarWidth + 'px';
         
         // 更新按鈕圖標
         const icon = document.querySelector('.mobile-nav-toggle i');
@@ -320,16 +337,36 @@ function toggleMobileNav(forceState) {
             icon.classList.remove('bi-list');
             icon.classList.add('bi-x');
         }
+        
+        // 顯示遮罩層
+        const overlay = document.querySelector('.mobile-nav-overlay');
+        if (overlay) {
+            overlay.style.display = 'block';
+            // 使用 setTimeout 確保過渡效果生效
+            setTimeout(() => {
+                overlay.style.opacity = '1';
+            }, 10);
+        }
     } else {
         // 關閉側邊欄
         document.body.classList.remove('mobile-nav-active');
-        header.style.left = '-300px';
+        header.style.left = '-100%'; // 使用百分比確保完全隱藏
         
         // 更新按鈕圖標
         const icon = document.querySelector('.mobile-nav-toggle i');
         if (icon) {
             icon.classList.remove('bi-x');
             icon.classList.add('bi-list');
+        }
+        
+        // 隱藏遮罩層
+        const overlay = document.querySelector('.mobile-nav-overlay');
+        if (overlay) {
+            overlay.style.opacity = '0';
+            // 使用 setTimeout 確保過渡效果完成後再隱藏
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 300);
         }
     }
 }
@@ -347,13 +384,21 @@ function setupMobileNav() {
         return;
     }
     
-    // 確保按鈕可點擊
+    // 確保按鈕可點擊 - 添加多個事件處理器以確保點擊被捕獲
     toggleButton.onclick = function(e) {
         console.log("Toggle button onclick triggered");
         e.preventDefault();
         e.stopPropagation();
         toggleMobileNav();
     };
+    
+    // 添加額外的點擊事件處理器
+    toggleButton.addEventListener('click', function(e) {
+        console.log("Toggle button click event triggered");
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMobileNav();
+    }, true); // 使用捕獲階段
     
     // 點擊導航菜單項時自動關閉側邊欄（僅在移動端）
     const navLinks = document.querySelectorAll('#header .navmenu a, #header .nav-link');
@@ -382,7 +427,7 @@ function setupMobileNav() {
 }
 
 /**
- * 檢查並設置移動端導航狀態
+ * 檢查並設置移動端導航狀態 - 修正版
  */
 function checkMobileNavState() {
     console.log("Checking mobile nav state");
@@ -404,9 +449,16 @@ function checkMobileNavState() {
             toggleButton.style.display = 'flex';
         }
         
+        // 設置適當的寬度
+        const screenWidth = window.innerWidth;
+        const sidebarWidth = Math.min(screenWidth * 0.8, 300); // 80%的螢幕寬度，最大300px
+        header.style.width = sidebarWidth + 'px';
+        
         // 如果側邊欄未激活，確保它是隱藏的
         if (!document.body.classList.contains('mobile-nav-active')) {
-            header.style.left = '-300px';
+            header.style.left = '-100%'; // 使用百分比確保完全隱藏
+        } else {
+            header.style.left = '0';
         }
         
         // 重置主內容區域
@@ -426,6 +478,7 @@ function checkMobileNavState() {
         
         // 桌面版始終顯示側邊欄
         header.style.left = '0';
+        header.style.width = '300px';
         document.body.classList.remove('mobile-nav-active');
         
         // 調整主內容區域
@@ -439,7 +492,7 @@ function checkMobileNavState() {
         const overlay = document.querySelector('.mobile-nav-overlay');
         if (overlay) {
             overlay.style.display = 'none';
+            overlay.style.opacity = '0';
         }
     }
 }
-
