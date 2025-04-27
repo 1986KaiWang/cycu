@@ -519,13 +519,5 @@ body.mobile-nav-active .mobile-nav-overlay {
     opacity: 1;
 }
 
-/* 隱藏側邊欄中的額外漢堡圖標 */
-#header .mobile-nav-toggle,
-#header .bi-list,
-#header [class*="mobile-nav"] {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-}
+
 
