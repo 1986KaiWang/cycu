@@ -1,4 +1,4 @@
-/* custom.css - 完整修正版 */
+/* custom.css - 完整修改版 */
 :root {
     --nav-mobile-background-color: linear-gradient(135deg, #03001C 0%, #301E67 40%, #5B8FB9 100%) !important;
     --nav-dropdown-background-color: rgba(3, 0, 28, 0.9) !important; /* 深藍黑半透明 */
@@ -33,13 +33,39 @@
     top: 0;
     height: 100vh; /* 設置為視窗高度 */
     width: 300px; /* 恢復為原始設計寬度 */
-    overflow-y: auto; /* 允許內容滾動 */
     overflow-x: hidden; /* 防止水平溢出 */
     z-index: 1000; /* 確保在其他元素上方 */
     
     /* 添加底部陰影增強深色感 */
     box-shadow: inset 0 -20px 30px -10px rgba(3, 0, 28, 0.5);
     transition: all 0.3s ease; /* 添加過渡效果 */
+}
+
+/* 手機版和桌面版側邊欄滾動行為區分 */
+@media (max-width: 1199px) {
+    #header {
+        overflow-y: auto !important; /* 手機版允許滾動 */
+        -webkit-overflow-scrolling: touch; /* 增加在 iOS 上的滾動流暢度 */
+    }
+}
+
+@media (min-width: 1200px) {
+    #header {
+        overflow-y: hidden !important; /* 桌面版保持不可滾動 */
+    }
+}
+
+/* 確保側邊欄內容在手機版有足夠的底部間距 */
+@media (max-width: 1199px) {
+    #header .profile,
+    #header .navmenu,
+    #header .social-links {
+        padding-bottom: 20px; /* 增加底部內邊距 */
+    }
+    
+    #header .navmenu li:last-child {
+        margin-bottom: 30px; /* 最後一個導航項目添加額外的底部間距 */
+    }
 }
 
 /* 確保主內容區域不被側邊欄覆蓋 */
@@ -453,7 +479,6 @@ main, .main-content, #main {
         height: 100vh;
         z-index: 9998;
         transition: all 0.3s ease;
-        overflow-y: auto;
     }
     
     /* 側邊欄顯示時的狀態 */
@@ -490,11 +515,6 @@ main, .main-content, #main {
     }
 }
 
-/* 確保側邊欄內容可滾動 */
-#header {
-    overflow-y: auto;
-}
-
 /* 修正可能的滾動問題 */
 html, body {
     overflow-x: hidden;
@@ -518,7 +538,86 @@ body.mobile-nav-active .mobile-nav-overlay {
     display: block;
     opacity: 1;
 }
-/* 在 custom.css 中只添加這一行 */
+
+/* 主內容區域顯示修復 - 新增部分 */
+
+/* 確保主內容區域在桌面版正確顯示 */
+@media (min-width: 1200px) {
+    /* 選擇所有可能的主內容容器 */
+    body > main,
+    body > #main,
+    body > .main-content,
+    body > .container,
+    body > .container-fluid,
+    body > div:not(#header):not(.mobile-nav-toggle):not(.mobile-nav-overlay),
+    body > section,
+    #hero,
+    .section-bg,
+    .section-title,
+    .row,
+    .container,
+    .container-fluid {
+        margin-left: 300px !important;
+        width: calc(100% - 300px) !important;
+        max-width: calc(100% - 300px) !important;
+        transition: all 0.3s ease;
+    }
+    
+    /* 修復可能的內容溢出問題 */
+    body {
+        overflow-x: hidden;
+    }
+    
+    /* 確保內容可見 */
+    body > *:not(#header):not(.mobile-nav-toggle):not(.mobile-nav-overlay):not(script):not(style) {
+        visibility: visible !important;
+        opacity: 1 !important;
+        display: block !important;
+    }
+}
+
+/* 確保主內容在手機版正確顯示 */
+@media (max-width: 1199px) {
+    body > main,
+    body > #main,
+    body > .main-content,
+    body > .container,
+    body > .container-fluid,
+    body > div:not(#header):not(.mobile-nav-toggle):not(.mobile-nav-overlay),
+    body > section,
+    #hero,
+    .section-bg,
+    .section-title,
+    .row,
+    .container,
+    .container-fluid {
+        margin-left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        transition: all 0.3s ease;
+    }
+}
+
+/* 確保主內容層級正確 */
+main, #main, .main-content, #hero, .container, .container-fluid, section {
+    position: relative;
+    z-index: 1;
+}
+
+/* 修復可能的定位問題 */
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* 確保側邊欄不會覆蓋主內容 */
 #header {
-    overflow-y: hidden !important;
+    z-index: 1000;
+}
+
+/* 修復可能的內容隱藏問題 */
+.hidden, .d-none {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
