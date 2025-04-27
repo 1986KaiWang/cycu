@@ -39,12 +39,14 @@
     
     /* 添加底部陰影增強深色感 */
     box-shadow: inset 0 -20px 30px -10px rgba(3, 0, 28, 0.5);
+    transition: all 0.3s ease; /* 添加過渡效果 */
 }
 
 /* 確保主內容區域不被側邊欄覆蓋 */
 main, .main-content, #main {
     margin-left: 300px; /* 與側邊欄寬度相同 */
     width: calc(100% - 300px);
+    transition: all 0.3s ease; /* 添加過渡效果 */
 }
 
 /* 強制添加動畫效果 - 使用獨立的偽元素 */
@@ -402,92 +404,94 @@ main, .main-content, #main {
         margin-left: 0;
         width: 100%;
     }
-    
-    /* 移動版導航樣式調整 */
-    .mobile-nav-toggle {
-        display: block;
-        position: fixed;
-        right: 15px;
-        top: 15px;
-        z-index: 9998;
-    }
-}
-/* 修正手機版側邊欄問題 */
-@media (max-width: 1199px) {
-    /* 側邊欄默認隱藏 */
-    #header {
-        left: -300px; /* 初始狀態為隱藏 */
-        transition: all 0.5s ease;
-        z-index: 9997;
-        width: 300px;
-        height: 100vh;
-        position: fixed;
-    }
-    
-    /* 側邊欄顯示時的狀態 */
-    #header.header-mobile-active {
-        left: 0;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-    }
-    
-    /* 主內容區域不需要左邊距 */
-    .main {
-        margin-left: 0 !important;
-        width: 100% !important;
-        padding: 0 15px;
-    }
-    
-    /* 確保切換按鈕可見 */
-    .header-toggle {
-        position: fixed;
-        top: 15px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-        background: rgba(48, 30, 103, 0.8);
-        border-radius: 50%;
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-size: 24px;
-        cursor: pointer;
-        z-index: 9999;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        transition: all 0.3s ease;
-    }
-    
-    /* 切換按鈕懸停效果 */
-    .header-toggle:hover {
-        background: rgba(91, 143, 185, 0.9);
-        transform: scale(1.1);
-    }
-    
-    /* 側邊欄顯示時的切換按鈕樣式 */
-    body.mobile-nav-active .header-toggle {
-        right: 15px;
-    }
-    
-    /* 修改圖標為關閉符號 */
-    body.mobile-nav-active .header-toggle::before {
-        content: "\F62A"; /* Bootstrap 圖標 x 符號 */
-        font-family: bootstrap-icons !important;
-    }
 }
 
-/* 確保較大螢幕上側邊欄始終可見 */
+/* ===== 手機版側邊欄修正 - 新增獨立切換按鈕 ===== */
+
+/* 側邊欄切換按鈕樣式 */
+.mobile-nav-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 9999; /* 確保按鈕在最上層 */
+    width: 40px;
+    height: 40px;
+    background: rgba(48, 30, 103, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    line-height: 0;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-toggle:hover {
+    background: rgba(91, 143, 185, 0.9);
+    transform: scale(1.1);
+}
+
+/* 在桌面版隱藏切換按鈕 */
 @media (min-width: 1200px) {
+    .mobile-nav-toggle {
+        display: none;
+    }
+    
     #header {
-        left: 0;
+        left: 0 !important;
         width: 300px;
     }
     
     .main {
         margin-left: 300px;
-        width: calc(100% - 300px);
+    }
+}
+
+/* 手機版側邊欄行為 */
+@media (max-width: 1199px) {
+    /* 確保切換按鈕始終可見 */
+    .mobile-nav-toggle {
+        display: flex !important;
     }
     
-    .header-toggle {
-        display: none !important;
+    /* 默認隱藏側邊欄 */
+    #header {
+        left: -300px;
+        width: 300px;
+        position: fixed;
+        height: 100vh;
+        z-index: 9998;
+        transition: all 0.3s ease;
+        overflow-y: auto;
     }
+    
+    /* 側邊欄顯示時的狀態 */
+    body.mobile-nav-active #header {
+        left: 0;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    }
+    
+    /* 主內容區域不需要左邊距 */
+    main, .main-content, #main {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+    
+    /* 側邊欄顯示時改變按鈕圖標 */
+    body.mobile-nav-active .mobile-nav-toggle i::before {
+        content: "\f659"; /* Bootstrap 圖標 x 符號 */
+    }
+}
+
+/* 確保側邊欄內容可滾動 */
+#header {
+    overflow-y: auto;
+}
+
+/* 修正可能的滾動問題 */
+html, body {
+    overflow-x: hidden;
 }
