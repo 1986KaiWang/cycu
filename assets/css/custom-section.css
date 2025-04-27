@@ -518,41 +518,14 @@ body.mobile-nav-active .mobile-nav-overlay {
     display: block;
     opacity: 1;
 }
-/* ===== 側邊欄優化代碼 - 開始 ===== */
-/* 修改漢堡按鈕顏色為淡紫色 */
-/*.mobile-nav-toggle {
-    background: rgba(216, 180, 254, 0.9) !important; /* 淡紫色背景 */
-    color: #301E67 !important; /* 深紫色圖標 */
-    box-shadow: 0 0 10px rgba(216, 180, 254, 0.5) !important;
-}
-
-.mobile-nav-toggle:hover {
-    background: rgba(216, 180, 254, 1) !important; /* 懸停時更亮的淡紫色 */
-    transform: scale(1.1);
-}*/
 
 /* 隱藏側邊欄中的額外漢堡圖標 */
-/*#header .mobile-nav-toggle,
+#header .mobile-nav-toggle,
 #header .bi-list,
 #header [class*="mobile-nav"] {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
-}*/
-
-/* 確保側邊欄內不會有重複的漢堡按鈕 */
-/*#header button,
-#header .toggle-button,
-#header .navbar-toggler {
-    display: none !important;
-    visibility: hidden !important;
-}*/
-
-/* 強制隱藏側邊欄內可能的漢堡圖標 */
-#header .bi-list,
-#header .fa-bars,
-#header .navbar-toggler-icon {
-    display: none !important;
 }
-/* ===== 側邊欄優化代碼 - 結束 ===== */
+
