@@ -409,5 +409,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // 將圖例添加到圓餅圖容器之後
-  pieChart.parentNode.insertBefore(legendContainer, pieChart.nextSibling);
+  //pieChart.parentNode.insertBefore(legendContainer, pieChart.nextSibling);*/
 });
