@@ -30,12 +30,12 @@
                 var(--sidebar-gradient-mid2) 70%,
                 var(--sidebar-gradient-bottom) 100%);
     position: fixed; /* 改為固定定位 */
-    left: 0;
     top: 0;
     height: 100vh; /* 設置為視窗高度 */
     width: 300px; /* 恢復為原始設計寬度 */
-    overflow: hidden;
-    z-index: 100; /* 確保在其他元素上方 */
+    overflow-y: auto; /* 允許內容滾動 */
+    overflow-x: hidden; /* 防止水平溢出 */
+    z-index: 1000; /* 確保在其他元素上方 */
     
     /* 添加底部陰影增強深色感 */
     box-shadow: inset 0 -20px 30px -10px rgba(3, 0, 28, 0.5);
@@ -44,8 +44,6 @@
 
 /* 確保主內容區域不被側邊欄覆蓋 */
 main, .main-content, #main {
-    margin-left: 300px; /* 與側邊欄寬度相同 */
-    width: calc(100% - 300px);
     transition: all 0.3s ease; /* 添加過渡效果 */
 }
 
@@ -392,20 +390,6 @@ main, .main-content, #main {
     100% { background-position: 0% 50%; }
 }
 
-/* 響應式調整 */
-@media (max-width: 768px) {
-    #header {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-    
-    main, .main-content, #main {
-        margin-left: 0;
-        width: 100%;
-    }
-}
-
 /* ===== 手機版側邊欄修正 - 新增獨立切換按鈕 ===== */
 
 /* 側邊欄切換按鈕樣式 */
@@ -427,6 +411,8 @@ main, .main-content, #main {
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+    border: none; /* 移除可能的邊框 */
+    outline: none; /* 移除點擊時的輪廓 */
 }
 
 .mobile-nav-toggle:hover {
@@ -445,8 +431,9 @@ main, .main-content, #main {
         width: 300px;
     }
     
-    .main {
+    main, .main-content, #main {
         margin-left: 300px;
+        width: calc(100% - 300px);
     }
 }
 
@@ -459,7 +446,7 @@ main, .main-content, #main {
     
     /* 默認隱藏側邊欄 */
     #header {
-        left: -300px;
+        left: -300px; /* 初始狀態為隱藏 */
         width: 300px;
         position: fixed;
         height: 100vh;
@@ -479,11 +466,6 @@ main, .main-content, #main {
         margin-left: 0 !important;
         width: 100% !important;
     }
-    
-    /* 側邊欄顯示時改變按鈕圖標 */
-    body.mobile-nav-active .mobile-nav-toggle i::before {
-        content: "\f659"; /* Bootstrap 圖標 x 符號 */
-    }
 }
 
 /* 確保側邊欄內容可滾動 */
@@ -494,4 +476,23 @@ main, .main-content, #main {
 /* 修正可能的滾動問題 */
 html, body {
     overflow-x: hidden;
+}
+
+/* 添加遮罩層，點擊時關閉側邊欄 */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9997; /* 低於側邊欄但高於其他內容 */
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+body.mobile-nav-active .mobile-nav-overlay {
+    display: block;
+    opacity: 1;
 }
