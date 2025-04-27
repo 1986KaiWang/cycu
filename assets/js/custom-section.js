@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         enhanceSidebarAnimation(sidebar);
     }
     
-    // 增強側邊欄背景動畫 - 修正高度問題
+    // 增強側邊欄背景動畫
     function enhanceSidebarAnimation(sidebar) {
         // 檢查是否已經有動畫樣式
         const computedStyle = window.getComputedStyle(sidebar);
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             animationLayer.style.top = '0';
             animationLayer.style.left = '0';
             animationLayer.style.width = '100%';
-            animationLayer.style.height = '100%'; // 使用100%而非固定高度
+            animationLayer.style.height = '100%';
             animationLayer.style.background = `linear-gradient(to bottom, 
                 #5B8FB9 0%,
                 #4C3A80 30%,
@@ -210,24 +210,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // 監聽窗口大小變化，調整側邊欄位置和狀態
     window.addEventListener('resize', function() {
         checkMobileNavState();
-        adjustSidebarHeight(); // 添加調整側邊欄高度的函數調用
     });
-    
-    // 調整側邊欄高度以適應視窗
-    adjustSidebarHeight();
 });
-
-/**
- * 調整側邊欄高度以適應視窗 - 新增函數
- */
-function adjustSidebarHeight() {
-    const header = document.getElementById('header');
-    if (!header) return;
-    
-    // 確保側邊欄高度不超過視窗高度
-    header.style.height = '100%';
-    header.style.bottom = '0'; // 確保側邊欄延伸到視窗底部
-}
 
 /**
  * 初始化側邊欄狀態 - 修正版
@@ -260,9 +244,6 @@ function initializeSidebar() {
             mainContent.style.width = 'calc(100% - 300px)';
         }
     }
-    
-    // 調整側邊欄高度
-    adjustSidebarHeight();
 }
 
 /**
@@ -514,8 +495,14 @@ function checkMobileNavState() {
             overlay.style.opacity = '0';
         }
     }
-    
-    // 調整側邊欄高度
-    adjustSidebarHeight();
 }
-
+// 在 custom-section.js 中添加這幾行
+document.addEventListener('DOMContentLoaded', function() {
+    // 其他代碼...
+    
+    // 確保側邊欄不可滾動
+    const header = document.getElementById('header');
+    if (header) {
+        header.style.overflowY = 'hidden';
+    }
+});
