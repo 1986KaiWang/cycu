@@ -506,3 +506,85 @@ document.addEventListener('DOMContentLoaded', function() {
         header.style.overflowY = 'hidden';
     }
 });
+// 添加到 custom-section.js 文件中
+document.addEventListener('DOMContentLoaded', function() {
+    // 其他現有代碼...
+    
+    // 處理導航鏈接，防止 URL 中出現 hash
+    handleNavLinks();
+});
+
+/**
+ * 處理導航鏈接，防止在 URL 中顯示 hash
+ */
+function handleNavLinks() {
+    // 獲取所有導航鏈接
+    const navLinks = document.querySelectorAll('#navmenu a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // 阻止默認行為
+            
+            // 獲取目標區域的 ID（去掉 # 符號）
+            const targetId = this.getAttribute('href').substring(1);
+            
+            // 獲取目標元素
+            const targetElement = document.getElementById(targetId);
+            
+            // 如果找到目標元素，滾動到該位置
+            if (targetElement) {
+                // 計算目標元素的位置
+                const offsetTop = targetElement.offsetTop;
+                
+                // 平滑滾動到目標位置
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+                
+                // 更新活動狀態
+                updateActiveNavItem(this);
+            }
+        });
+    });
+}
+
+/**
+ * 更新導航項目的活動狀態
+ * @param {HTMLElement} activeLink - 當前活動的導航鏈接
+ */
+function updateActiveNavItem(activeLink) {
+    // 移除所有導航項目的活動狀態
+    const navLinks = document.querySelectorAll('#navmenu a');
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    // 為當前點擊的項目添加活動狀態
+    activeLink.classList.add('active');
+}
+
+// 監聽滾動事件，根據滾動位置更新導航項目的活動狀態
+window.addEventListener('scroll', function() {
+    // 獲取所有具有 ID 的區塊
+    const sections = document.querySelectorAll('section[id]');
+    
+    // 獲取當前滾動位置
+    const scrollPosition = window.scrollY;
+    
+    // 檢查每個區塊的位置
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100; // 減去一定的偏移量以提前激活
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        // 如果當前滾動位置在該區塊範圍內
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            // 更新對應的導航項目為活動狀態
+            const navLink = document.querySelector(`#navmenu a[href="#${sectionId}"]`);
+            if (navLink) {
+                updateActiveNavItem(navLink);
+            }
+        }
+    });
+});
