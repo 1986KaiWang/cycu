@@ -1,0 +1,379 @@
+/* 學術發表區塊 - 絢麗酷炫按鈕樣式 */
+:root {
+    --publications-primary-color: #6a11cb;       /* 主色 - 紫色 */
+    --publications-secondary-color: #2575fc;     /* 輔助色 - 藍色 */
+    --publications-light-color: #F8FAFC;         /* 淺灰白 - 亮色 */
+    --publications-transition: all 0.3s ease;    /* 統一過渡效果 */
+  }
+  
+  /* 保留原始排版，只修改按鈕部分 */
+  .portfolio-filters {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    margin: 0 0 30px 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+  
+  /* 按鈕容器包裝 */
+  .portfolio-filters-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* 按鈕內層容器 - 玻璃擬態效果 */
+  .portfolio-filters-container {
+    display: flex;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    box-shadow: 0 10px 30px rgba(88, 103, 221, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 8px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  /* 按鈕基本樣式 */
+  .portfolio-filters li {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 15px 30px !important;
+    border: none !important;
+    background: transparent !important;
+    color: #666 !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+  }
+  
+  /* 按鈕背景效果 */
+  .portfolio-filters li::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(135deg, #6a11cb, #2575fc) !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    z-index: -1 !important;
+    border-radius: 12px !important;
+  }
+  
+  /* 按鈕光芒效果 */
+  .portfolio-filters li::after {
+    content: '' !important;
+    position: absolute !important;
+    top: -2px !important;
+    left: -2px !important;
+    right: -2px !important;
+    bottom: -2px !important;
+    background: linear-gradient(45deg, #6a11cb, #2575fc, #6a11cb) !important;
+    background-size: 200% !important;
+    border-radius: 14px !important;
+    z-index: -2 !important;
+    opacity: 0 !important;
+    transition: opacity 0.4s ease !important;
+  }
+  
+  /* 按鈕懸停效果 */
+  .portfolio-filters li:hover {
+    color: #6a11cb !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 5px 15px rgba(106, 17, 203, 0.2) !important;
+  }
+  
+  /* 激活狀態 */
+  .portfolio-filters li.filter-active {
+    color: white !important;
+    box-shadow: 0 10px 25px rgba(106, 17, 203, 0.3) !important;
+  }
+  
+  .portfolio-filters li.filter-active::before {
+    opacity: 1 !important;
+  }
+  
+  .portfolio-filters li.filter-active::after {
+    opacity: 1 !important;
+    animation: borderGlow 2s linear infinite !important;
+  }
+  
+  /* 按鈕圖標容器 - 超炫酷效果 */
+  .portfolio-filters li .tab-icon {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background: rgba(106, 17, 203, 0.1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 8px !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    z-index: 1 !important;
+    overflow: hidden !important;
+  }
+  
+  /* 圖標容器發光環 */
+  .portfolio-filters li .tab-icon::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -2px !important;
+    left: -2px !important;
+    right: -2px !important;
+    bottom: -2px !important;
+    background: linear-gradient(45deg, #6a11cb, #2575fc, #6a11cb) !important;
+    border-radius: 50% !important;
+    z-index: -1 !important;
+    opacity: 0 !important;
+    transition: opacity 0.4s ease !important;
+    animation: rotateGradient 2s linear infinite !important;
+  }
+  
+  /* 圖標容器內部光效 */
+  .portfolio-filters li .tab-icon::after {
+    content: '' !important;
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%) !important;
+    opacity: 0 !important;
+    transition: all 0.5s ease !important;
+    mix-blend-mode: overlay !important;
+    z-index: 1 !important;
+  }
+  
+  /* 圖標本身樣式 */
+  .portfolio-filters li .tab-icon i {
+    font-size: 18px !important;
+    color: #6a11cb !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  
+  /* 激活狀態下的圖標容器 */
+  .portfolio-filters li.filter-active .tab-icon {
+    background: rgba(255, 255, 255, 0.25) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5) !important;
+  }
+  
+  /* 激活狀態下的圖標發光環 */
+  .portfolio-filters li.filter-active .tab-icon::before {
+    opacity: 1 !important;
+  }
+  
+  /* 激活狀態下的圖標 */
+  .portfolio-filters li.filter-active .tab-icon i {
+    color: white !important;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7) !important;
+  }
+  
+  /* 懸停狀態下的圖標容器 */
+  .portfolio-filters li:hover .tab-icon {
+    transform: scale(1.05) !important;
+  }
+  
+  /* 懸停狀態下的內部光效 */
+  .portfolio-filters li:hover .tab-icon::after {
+    opacity: 0.5 !important;
+  }
+  
+  /* 按鈕文字 */
+  .portfolio-filters li .filter-text {
+    position: relative !important;
+    z-index: 1 !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* 多重波紋效果 */
+  .portfolio-ripple {
+    position: absolute !important;
+    border-radius: 50% !important;
+    transform: scale(0) !important;
+    animation: portfolio-ripple 0.8s cubic-bezier(0, 0.2, 0.8, 1) !important;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(106, 17, 203, 0.3) 50%, transparent 70%) !important;
+    pointer-events: none !important;
+  }
+  
+  /* 閃光效果 */
+  .portfolio-flash {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+    z-index: 2 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  
+  /* 圖標粒子效果容器 */
+  .icon-particles-container {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+  }
+  
+  /* 粒子元素 */
+  .icon-particle {
+    position: absolute !important;
+    width: 4px !important;
+    height: 4px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #6a11cb, #2575fc) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  
+  /* 點擊時的閃光動畫 */
+  @keyframes portfolio-flash {
+    0% { opacity: 0.7; }
+    100% { opacity: 0; }
+  }
+  
+  /* 波紋動畫 */
+  @keyframes portfolio-ripple {
+    0% {
+      transform: scale(0);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  
+  /* 脈動動畫 */
+  @keyframes portfolio-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* 邊框發光動畫 */
+  @keyframes borderGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* 圖標閃爍動畫 */
+  @keyframes iconFlash {
+    0% { filter: brightness(1); }
+    25% { filter: brightness(1.5); }
+    50% { filter: brightness(1); }
+    75% { filter: brightness(1.5); }
+    100% { filter: brightness(1); }
+  }
+  
+  /* 圖標旋轉動畫 */
+  @keyframes iconRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* 漸變旋轉動畫 */
+  @keyframes rotateGradient {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* 粒子飄浮動畫 */
+  @keyframes particleFloat {
+    0% { transform: translateY(0) translateX(0); opacity: 1; }
+    100% { transform: translateY(-20px) translateX(10px); opacity: 0; }
+  }
+  
+  /* 圖標波動動畫 */
+  @keyframes iconWave {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+  }
+  
+  /* 圖標發光動畫 */
+  @keyframes iconGlow {
+    0% { filter: drop-shadow(0 0 2px rgba(106, 17, 203, 0.3)); }
+    50% { filter: drop-shadow(0 0 8px rgba(106, 17, 203, 0.6)); }
+    100% { filter: drop-shadow(0 0 2px rgba(106, 17, 203, 0.3)); }
+  }
+  
+  /* 懸停時的脈動效果 */
+  .portfolio-filters li:hover .tab-icon {
+    animation: portfolio-pulse 1s infinite !important;
+  }
+  
+  /* 點擊時的閃爍效果 */
+  .portfolio-filters li.clicking .tab-icon {
+    animation: iconFlash 0.5s ease-out !important;
+  }
+  
+  /* 激活狀態下的圖標浮動動畫 */
+  .portfolio-filters li.filter-active .tab-icon i {
+    animation: iconWave 2s ease-in-out infinite !important;
+  }
+  
+  /* 確保不影響原有的圖片網格布局 */
+  .isotope-container {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+  
+  /* 保持原始的卡片樣式不變 */
+  .portfolio-item {
+    break-inside: avoid !important;
+    margin-bottom: 20px !important;
+  }
+  
+  /* 內容切換時的淡入效果 */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* 響應式調整 - 僅針對按鈕 */
+  @media (max-width: 768px) {
+    .portfolio-filters-container {
+      flex-direction: column !important;
+      width: 100% !important;
+      max-width: 300px !important;
+    }
+    
+    .portfolio-filters li {
+      width: 100% !important;
+      padding: 12px 15px !important;
+      flex-direction: row !important;
+      justify-content: flex-start !important;
+    }
+    
+    .portfolio-filters li .tab-icon {
+      width: 30px !important;
+      height: 30px !important;
+      margin-bottom: 0 !important;
+      margin-right: 10px !important;
+    }
+  }
+  
