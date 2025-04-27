@@ -233,3 +233,150 @@ document.addEventListener('DOMContentLoaded', function() {
     // 監聽窗口大小變化，調整側邊欄位置
     window.addEventListener('resize', adjustSidebarPosition);
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // 原有的代碼保留...
+    
+    // 處理側邊欄切換按鈕
+    setupMobileNav();
+    
+    // 監聽窗口大小變化，調整側邊欄位置
+    window.addEventListener('resize', function() {
+        adjustSidebarPosition();
+        checkMobileNavState();
+    });
+    
+    // 初始化時檢查並設置側邊欄狀態
+    checkMobileNavState();
+});
+
+/**
+ * 設置移動端導航功能
+ */
+function setupMobileNav() {
+    const toggleButton = document.querySelector('.header-toggle');
+    if (!toggleButton) return;
+    
+    // 移除原有的 class 並添加新的圖標
+    toggleButton.innerHTML = '<i class="bi bi-list"></i>';
+    
+    // 添加點擊事件
+    toggleButton.addEventListener('click', function() {
+        document.body.classList.toggle('mobile-nav-active');
+        const header = document.getElementById('header');
+        if (header) {
+            header.classList.toggle('header-mobile-active');
+        }
+        
+        // 切換圖標
+        if (document.body.classList.contains('mobile-nav-active')) {
+            this.innerHTML = '<i class="bi bi-x"></i>';
+        } else {
+            this.innerHTML = '<i class="bi bi-list"></i>';
+        }
+    });
+    
+    // 點擊導航菜單項時自動關閉側邊欄（僅在移動端）
+    const navLinks = document.querySelectorAll('.navmenu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 1199) {
+                document.body.classList.remove('mobile-nav-active');
+                const header = document.getElementById('header');
+                if (header) {
+                    header.classList.remove('header-mobile-active');
+                }
+                
+                // 恢復漢堡圖標
+                if (toggleButton) {
+                    toggleButton.innerHTML = '<i class="bi bi-list"></i>';
+                }
+            }
+        });
+    });
+    
+    // 點擊頁面內容區域時關閉側邊欄
+    const mainContent = document.querySelector('main');
+    if (mainContent) {
+        mainContent.addEventListener('click', function() {
+            if (window.innerWidth <= 1199 && document.body.classList.contains('mobile-nav-active')) {
+                document.body.classList.remove('mobile-nav-active');
+                const header = document.getElementById('header');
+                if (header) {
+                    header.classList.remove('header-mobile-active');
+                }
+                
+                // 恢復漢堡圖標
+                if (toggleButton) {
+                    toggleButton.innerHTML = '<i class="bi bi-list"></i>';
+                }
+            }
+        });
+    }
+}
+
+/**
+ * 檢查並設置移動端導航狀態
+ */
+function checkMobileNavState() {
+    const isMobile = window.innerWidth <= 1199;
+    const header = document.getElementById('header');
+    
+    if (isMobile) {
+        // 確保在移動端時側邊欄默認隱藏
+        document.body.classList.remove('mobile-nav-active');
+        if (header) {
+            header.classList.remove('header-mobile-active');
+            header.style.left = '-300px';
+        }
+    } else {
+        // 在桌面端確保側邊欄顯示
+        if (header) {
+            header.style.left = '0';
+        }
+    }
+}
+
+/**
+ * 調整側邊欄位置 - 修改版
+ */
+function adjustSidebarPosition() {
+    const sidebar = document.querySelector('#header');
+    if (!sidebar) return;
+    
+    // 檢查是否為移動設備
+    const isMobile = window.innerWidth <= 1199;
+    
+    if (isMobile) {
+        // 移動設備樣式 - 保持固定定位但初始隱藏
+        sidebar.style.position = 'fixed';
+        sidebar.style.width = '300px';
+        sidebar.style.height = '100vh';
+        
+        // 如果沒有激活，則隱藏
+        if (!document.body.classList.contains('mobile-nav-active')) {
+            sidebar.style.left = '-300px';
+        }
+        
+        // 重置主內容區域
+        const mainContent = document.querySelector('main') || document.querySelector('#main') || document.querySelector('.main-content');
+        if (mainContent) {
+            mainContent.style.marginLeft = '0';
+            mainContent.style.width = '100%';
+        }
+    } else {
+        // 桌面設備樣式
+        sidebar.style.position = 'fixed';
+        sidebar.style.width = '300px';
+        sidebar.style.height = '100vh';
+        sidebar.style.left = '0';
+        sidebar.style.top = '0';
+        
+        // 調整主內容區域
+        const mainContent = document.querySelector('main') || document.querySelector('#main') || document.querySelector('.main-content');
+        if (mainContent) {
+            mainContent.style.marginLeft = '300px';
+            mainContent.style.width = 'calc(100% - 300px)';
+        }
+    }
+}
+
