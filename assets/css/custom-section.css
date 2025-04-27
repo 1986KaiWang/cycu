@@ -437,7 +437,7 @@ main, .main-content, #main {
     }
 }
 
-/* 手機版側邊欄行為 */
+/* 手機版側邊欄行為 - 修正位置問題 */
 @media (max-width: 1199px) {
     /* 確保切換按鈕始終可見 */
     .mobile-nav-toggle {
@@ -446,8 +446,9 @@ main, .main-content, #main {
     
     /* 默認隱藏側邊欄 */
     #header {
-        left: -300px; /* 初始狀態為隱藏 */
-        width: 300px;
+        left: -100%; /* 使用百分比確保完全隱藏 */
+        width: 80%; /* 調整為螢幕寬度的80% */
+        max-width: 300px; /* 但最大不超過300px */
         position: fixed;
         height: 100vh;
         z-index: 9998;
@@ -461,10 +462,31 @@ main, .main-content, #main {
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     }
     
+    /* 確保側邊欄內容不會溢出 */
+    #header .profile,
+    #header .navmenu,
+    #header .social-links {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
     /* 主內容區域不需要左邊距 */
     main, .main-content, #main {
         margin-left: 0 !important;
         width: 100% !important;
+    }
+}
+
+/* 確保側邊欄在小型手機上也能正確顯示 */
+@media (max-width: 576px) {
+    body.mobile-nav-active #header {
+        width: 85%; /* 在更小的螢幕上佔據更多空間 */
+        max-width: 280px;
+    }
+    
+    #header {
+        width: 85%;
+        max-width: 280px;
     }
 }
 
