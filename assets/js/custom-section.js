@@ -76,43 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
         enhanceSidebarAnimation(sidebar);
     }
     
-    // 調整側邊欄位置
-    function adjustSidebarPosition() {
-        const sidebar = document.querySelector('#header');
-        if (!sidebar) return;
-        
-        // 檢查是否為移動設備
-        const isMobile = window.innerWidth <= 768;
-        
-        if (isMobile) {
-            // 移動設備樣式
-            sidebar.style.position = 'relative';
-            sidebar.style.width = '100%';
-            sidebar.style.height = 'auto';
-            
-            // 重置主內容區域
-            const mainContent = document.querySelector('main') || document.querySelector('#main') || document.querySelector('.main-content');
-            if (mainContent) {
-                mainContent.style.marginLeft = '0';
-                mainContent.style.width = '100%';
-            }
-        } else {
-            // 桌面設備樣式
-            sidebar.style.position = 'fixed';
-            sidebar.style.width = '300px'; // 恢復為原始設計寬度
-            sidebar.style.height = '100vh';
-            sidebar.style.left = '0';
-            sidebar.style.top = '0';
-            
-            // 調整主內容區域
-            const mainContent = document.querySelector('main') || document.querySelector('#main') || document.querySelector('.main-content');
-            if (mainContent) {
-                mainContent.style.marginLeft = '300px'; // 恢復為原始設計寬度
-                mainContent.style.width = 'calc(100% - 300px)';
-            }
-        }
-    }
-    
     // 增強側邊欄背景動畫 - 修正版
     function enhanceSidebarAnimation(sidebar) {
         // 檢查是否已經有動畫樣式
@@ -230,84 +193,97 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollIndicator.style.width = scrolled + '%';
     }
     
-    // 監聽窗口大小變化，調整側邊欄位置
-    window.addEventListener('resize', adjustSidebarPosition);
-});
-document.addEventListener('DOMContentLoaded', function() {
-    // 原有的代碼保留...
+    // 添加側邊欄切換按鈕
+    addMobileNavToggle();
     
-    // 處理側邊欄切換按鈕
+    // 設置移動端導航功能
     setupMobileNav();
     
-    // 監聽窗口大小變化，調整側邊欄位置
+    // 初始化時檢查並設置側邊欄狀態
+    checkMobileNavState();
+    
+    // 監聽窗口大小變化，調整側邊欄位置和狀態
     window.addEventListener('resize', function() {
         adjustSidebarPosition();
         checkMobileNavState();
     });
-    
-    // 初始化時檢查並設置側邊欄狀態
-    checkMobileNavState();
 });
+
+/**
+ * 添加移動端導航切換按鈕
+ */
+function addMobileNavToggle() {
+    // 檢查是否已存在切換按鈕
+    if (document.querySelector('.mobile-nav-toggle')) return;
+    
+    // 創建切換按鈕
+    const toggleButton = document.createElement('div');
+    toggleButton.className = 'mobile-nav-toggle';
+    toggleButton.innerHTML = '<i class="bi bi-list"></i>';
+    
+    // 添加到頁面
+    document.body.appendChild(toggleButton);
+}
 
 /**
  * 設置移動端導航功能
  */
 function setupMobileNav() {
-    const toggleButton = document.querySelector('.header-toggle');
-    if (!toggleButton) return;
-    
-    // 移除原有的 class 並添加新的圖標
-    toggleButton.innerHTML = '<i class="bi bi-list"></i>';
+    // 獲取切換按鈕
+    const toggleButton = document.querySelector('.mobile-nav-toggle');
+    if (!toggleButton) {
+        console.warn('側邊欄切換按鈕未找到');
+        return;
+    }
     
     // 添加點擊事件
-    toggleButton.addEventListener('click', function() {
+    toggleButton.addEventListener('click', function(e) {
+        e.preventDefault();
         document.body.classList.toggle('mobile-nav-active');
-        const header = document.getElementById('header');
-        if (header) {
-            header.classList.toggle('header-mobile-active');
-        }
         
-        // 切換圖標
-        if (document.body.classList.contains('mobile-nav-active')) {
-            this.innerHTML = '<i class="bi bi-x"></i>';
-        } else {
-            this.innerHTML = '<i class="bi bi-list"></i>';
+        // 更新圖標
+        const icon = this.querySelector('i');
+        if (icon) {
+            if (document.body.classList.contains('mobile-nav-active')) {
+                icon.classList.remove('bi-list');
+                icon.classList.add('bi-x');
+            } else {
+                icon.classList.remove('bi-x');
+                icon.classList.add('bi-list');
+            }
         }
     });
     
     // 點擊導航菜單項時自動關閉側邊欄（僅在移動端）
-    const navLinks = document.querySelectorAll('.navmenu a');
+    const navLinks = document.querySelectorAll('#header .navmenu a, #header .nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             if (window.innerWidth <= 1199) {
                 document.body.classList.remove('mobile-nav-active');
-                const header = document.getElementById('header');
-                if (header) {
-                    header.classList.remove('header-mobile-active');
-                }
                 
-                // 恢復漢堡圖標
-                if (toggleButton) {
-                    toggleButton.innerHTML = '<i class="bi bi-list"></i>';
+                // 更新圖標
+                const icon = document.querySelector('.mobile-nav-toggle i');
+                if (icon) {
+                    
+                    icon.classList.remove('bi-x');
+                    icon.classList.add('bi-list');
                 }
             }
         });
     });
     
-    // 點擊頁面內容區域時關閉側邊欄
-    const mainContent = document.querySelector('main');
+    // 點擊頁面主內容區域時關閉側邊欄
+    const mainContent = document.querySelector('main') || document.querySelector('#main');
     if (mainContent) {
         mainContent.addEventListener('click', function() {
             if (window.innerWidth <= 1199 && document.body.classList.contains('mobile-nav-active')) {
                 document.body.classList.remove('mobile-nav-active');
-                const header = document.getElementById('header');
-                if (header) {
-                    header.classList.remove('header-mobile-active');
-                }
                 
-                // 恢復漢堡圖標
-                if (toggleButton) {
-                    toggleButton.innerHTML = '<i class="bi bi-list"></i>';
+                // 更新圖標
+                const icon = document.querySelector('.mobile-nav-toggle i');
+                if (icon) {
+                    icon.classList.remove('bi-x');
+                    icon.classList.add('bi-list');
                 }
             }
         });
@@ -319,25 +295,34 @@ function setupMobileNav() {
  */
 function checkMobileNavState() {
     const isMobile = window.innerWidth <= 1199;
-    const header = document.getElementById('header');
     
     if (isMobile) {
         // 確保在移動端時側邊欄默認隱藏
-        document.body.classList.remove('mobile-nav-active');
-        if (header) {
-            header.classList.remove('header-mobile-active');
-            header.style.left = '-300px';
+        if (!document.body.classList.contains('mobile-nav-active')) {
+            const header = document.getElementById('header');
+            if (header) {
+                header.style.left = '-300px';
+            }
         }
     } else {
         // 在桌面端確保側邊欄顯示
+        const header = document.getElementById('header');
         if (header) {
             header.style.left = '0';
+        }
+        document.body.classList.remove('mobile-nav-active');
+        
+        // 更新圖標
+        const icon = document.querySelector('.mobile-nav-toggle i');
+        if (icon) {
+            icon.classList.remove('bi-x');
+            icon.classList.add('bi-list');
         }
     }
 }
 
 /**
- * 調整側邊欄位置 - 修改版
+ * 調整側邊欄位置
  */
 function adjustSidebarPosition() {
     const sidebar = document.querySelector('#header');
@@ -355,6 +340,8 @@ function adjustSidebarPosition() {
         // 如果沒有激活，則隱藏
         if (!document.body.classList.contains('mobile-nav-active')) {
             sidebar.style.left = '-300px';
+        } else {
+            sidebar.style.left = '0';
         }
         
         // 重置主內容區域
@@ -379,4 +366,3 @@ function adjustSidebarPosition() {
         }
     }
 }
-
