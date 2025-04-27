@@ -31,7 +31,7 @@
                 var(--sidebar-gradient-bottom) 100%);
     position: fixed; /* 改為固定定位 */
     top: 0;
-    height: 100vh; /* 設置為視窗高度 */
+    height: 100%; /* 改為100%而非100vh */
     width: 300px; /* 恢復為原始設計寬度 */
     overflow-y: auto; /* 允許內容滾動 */
     overflow-x: hidden; /* 防止水平溢出 */
@@ -54,7 +54,7 @@ main, .main-content, #main {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100%; /* 使用100%而非固定高度 */
     background: linear-gradient(to bottom, 
                 var(--sidebar-gradient-top) 0%,
                 var(--sidebar-gradient-mid1) 30%,
@@ -450,7 +450,7 @@ main, .main-content, #main {
         width: 80%; /* 調整為螢幕寬度的80% */
         max-width: 300px; /* 但最大不超過300px */
         position: fixed;
-        height: 100vh;
+        height: 100%; /* 使用100%而非100vh */
         z-index: 9998;
         transition: all 0.3s ease;
         overflow-y: auto;
@@ -498,6 +498,7 @@ main, .main-content, #main {
 /* 修正可能的滾動問題 */
 html, body {
     overflow-x: hidden;
+    height: 100%; /* 確保body填滿整個視窗高度 */
 }
 
 /* 添加遮罩層，點擊時關閉側邊欄 */
