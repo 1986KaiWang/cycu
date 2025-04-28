@@ -588,3 +588,48 @@ window.addEventListener('scroll', function() {
         }
     });
 });
+/**
+ * 處理導航鏈接，防止在 URL 中顯示 hash 並隱藏狀態欄 URL
+ */
+function handleNavLinks() {
+    // 獲取所有導航鏈接
+    const navLinks = document.querySelectorAll('#navmenu a');
+    
+    navLinks.forEach(link => {
+        // 保存原始 href 到自定義屬性
+        const originalHref = link.getAttribute('href');
+        link.setAttribute('data-target', originalHref);
+        
+        // 移除 href 屬性，改用 JavaScript 處理點擊
+        link.removeAttribute('href');
+        
+        // 添加適當的樣式，使其看起來仍像鏈接
+        link.style.cursor = 'pointer';
+        
+        // 處理點擊事件
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // 阻止默認行為
+            
+            // 獲取目標區域的 ID（從自定義屬性中獲取，去掉 # 符號）
+            const targetId = this.getAttribute('data-target').substring(1);
+            
+            // 獲取目標元素
+            const targetElement = document.getElementById(targetId);
+            
+            // 如果找到目標元素，滾動到該位置
+            if (targetElement) {
+                // 計算目標元素的位置
+                const offsetTop = targetElement.offsetTop;
+                
+                // 平滑滾動到目標位置
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+                
+                // 更新活動狀態
+                updateActiveNavItem(this);
+            }
+        });
+    });
+}
