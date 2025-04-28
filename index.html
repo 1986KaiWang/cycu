@@ -52,6 +52,7 @@
 <link href="assets/css/publications-section.css" rel="stylesheet" > <!--論文發表-->
 <link href="assets/css/news-section.css" rel="stylesheet" > <!--最新消息-->
 <link href="assets/css/custom-section.css" rel="stylesheet"><!--側欄  cstom-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!--footer-->
 
 
     <!-- =======================================================
@@ -1845,21 +1846,27 @@
 
   </main>
 
-  <footer id="footer" class="footer position-relative light-background">
-
+  <footer id="footer" class="footer position-relative light-background py-4">
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
+      <!-- 第一行：版權信息 -->
+      <div class="copyright text-center mb-2">
+        <p>
+          <i class="fas fa-copyright me-1"></i> 2025 中原大學土木工程學系 
+          <strong class="px-1">王凱</strong> 助理教授
+        </p>
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+      
+      <!-- 第二行：設計信息 -->
+      <div class="credits text-center">
+        <p>
+          <i class="fas fa-flask me-1"></i> 設計：地水工程與人工智慧辨識技術研究室 
+          <span class="badge bg-light text-dark ms-1">(GHAIR Lab)</span>
+          <i class="fas fa-lock ms-2 me-1"></i> 版權所有，未經許可，禁止轉載。
+        </p>
       </div>
+      
+ 
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
@@ -1892,6 +1899,50 @@
   <script src="assets/js/news-section.js"></script>
   <script src="assets/js/custom-section.js"></script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 禁用右鍵菜單
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+      });
+      
+      // 禁用 Ctrl+C, Ctrl+V, Ctrl+X, Ctrl+S, Ctrl+P, Ctrl+Shift+I, F12
+      document.addEventListener('keydown', function(e) {
+        // 檢測常見的複製快捷鍵
+        if (
+          (e.ctrlKey && (e.key === 'c' || e.key === 'C' || 
+                         e.key === 'x' || e.key === 'X' || 
+                         e.key === 'v' || e.key === 'V' || 
+                         e.key === 's' || e.key === 'S' || 
+                         e.key === 'p' || e.key === 'P' || 
+                         e.key === 'j' || e.key === 'J' ||
+                         (e.shiftKey && (e.key === 'i' || e.key === 'I')))) ||
+          e.key === 'F12' || e.key === 'PrintScreen'
+        ) {
+          e.preventDefault();
+          return false;
+        }
+      });
+      
+      // 禁用拖拽事件
+      document.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+        return false;
+      });
+      
+      // 禁用選取事件
+      document.addEventListener('selectstart', function(e) {
+        // 允許表單元素中的選取
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+          return true;
+        }
+        e.preventDefault();
+        return false;
+      });
+    });
+  </script>
+  
 </body>
 
 </html>
